@@ -1,0 +1,145 @@
+body{
+    background-color:#F1F6FF;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+@media (max-width: 575.98px) {
+    .logo-image  {
+              display: none;
+          }
+      }
+  
+      @media (min-width: 576px) and (max-width: 767.98px) {
+        .logo-image {
+              display: none;
+          }
+      }
+  
+      @media (min-width: 768px) and (max-width: 991.98px) {
+        .logo-image {
+              display: none;
+          }
+      }
+  
+      @media (min-width: 992px) and (max-width: 1199.98px) {
+        .logo-image {
+              display: none;
+          }
+      }
+  /* Flex container to align sign-up text and icons */
+  .sign-up-container {
+      display: flex;
+      align-items: center;
+      gap: 17px; /* Space between the two flex items */
+  }
+  
+  .sign-up-text, .sign-up-icons {
+      flex: 1; /* Make both containers take up equal width */
+      text-align: center; /* Center content within each flex item */
+  }
+  
+  .sign-up-icons a {
+      margin-left: 15px; /* Space between icons */
+  }
+
+
+  .custom-btn {
+    padding: 13px;
+    background-color: #065CE1;
+    border-radius: 10px;
+    border: 2px solid white;
+    color: white;
+    text-transform: none;
+    font-size: 19px;
+    width: 100%;
+    outline: none;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.custom-btn:focus {
+    outline: none; /* Prevents focus outline on click */
+}
+
+.custom-btn:active {
+    transform: scale(0.98); /* Slightly shrink on click for feedback */
+    transition: none; /* Prevent shrinking animation */
+}
+
+.custom-btn:hover {
+    background-color: #004bb5; /* Change background color on hover */
+}
+
+
+
+
+.custom-btn2 {
+    padding: 13px;
+    background-color: white;
+    border-radius: 10px;
+    border: 2px solid black;
+    color: black;
+    text-transform: none;
+    font-size: 19px;
+    width: 200%;
+    outline: none;
+    box-sizing: border-box; /* Include padding and border in the width calculation */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+}
+
+.custom-btn2:focus {
+    outline: none; /* Prevents focus outline on click */
+}
+
+.custom-btn2:active {
+    transform: scale(0.98); /* Slightly shrink on click for feedback */
+    transition: none; /* Prevent shrinking animation */
+}
+
+.custom-btn2:hover {
+    background-color: #004bb5; /* Change background color on hover */
+}
+
+.custom-btn2 {
+    display: flex; /* Use Flexbox for centering */
+    align-items: center; /* Vertically center content */
+    justify-content: center; /* Horizontally center content */
+    background-color: white; /* Light background color */
+    border: 2px solid black; /* Rounded corners */
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Font size for text */
+    font-weight: bold; /* Make text bold */
+    padding: 15px; /* Add padding for spacing */
+    width: 100%; /* Full-width button */
+    max-width: 400px; /* Optional: Set max width for larger screens */
+    margin: 0 auto; /* Center button horizontally if max-width is used */
+    transition: all 0.3s ease; /* Smooth hover effect */
+    box-sizing: border-box; /* Ensure border and padding are included in width */
+  }
+  
+  .custom-btn2:hover {
+    background-color: white; /* Darken background on hover */
+    border-color: black; /* Darken border */
+    color: #333; /* Slightly darken text */
+  }
+  
+  .custom-btn2 img.icon {
+    width: 30px; /* Icon size */
+    margin-right: 10px; /* Space between the icon and text */
+  }
+  
+  .custom-btn2 span {
+    display: inline-block;
+  }
+
+  
+  @media (max-width: 768px) {
+    .custom-btn2 {
+      font-size: 16px; /* Reduce text size */
+      padding: 10px; /* Reduce padding */
+    }
+  }
+  

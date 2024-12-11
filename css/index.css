@@ -1,0 +1,272 @@
+
+@import url('https://fonts.cdnfonts.com/css/roboto');
+
+body {
+ 
+    font-family: 'Roboto';
+    background-color: #F1F6FF;
+}
+
+.text-light-blue {
+    color: #0288d1;
+}
+
+.text-deep-blue {
+    color: #01579b;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    background-color:white;
+    padding:20px;
+}
+
+.btn-light-blue {
+    background-color: #0288d1;
+    color: white;
+}
+
+.btn-light-blue:hover {
+    background-color: #0277bd;
+}
+
+
+.spacing{
+    margin-top: 40px;
+}
+
+.spacingsmall{
+    margin-top: 20px;
+}
+
+
+.spacing-extra{
+    margin-top: 80px;
+}
+
+.header{
+font-size:50px;
+color:black;
+text-align: center;
+letter-spacing: -2px;
+}
+
+
+.pricing-header{
+  font-size:36px;
+  color:black;
+ 
+  letter-spacing: -2px;
+  }
+
+  .pricing-subtext{
+    font-size:17px;
+    color:black;
+   
+    letter-spacing: -1px;
+    }
+
+  .pricing-subheader{
+    font-size:26px;
+    color:black;
+   
+    letter-spacing: -2px;
+    }
+
+.header2{
+  font-size:40px;
+  color:white;
+
+  letter-spacing: -3px;
+  }
+
+strong{
+    color:#01579b;
+}
+
+.subheader{
+    
+    color:black;
+    text-align: center;
+    font-size:17px;
+   
+    }
+
+ 
+    .button-container {
+        display: flex;
+        justify-content: center; /* Centers buttons horizontally */
+        gap: 15px; /* Adds space between buttons */
+        margin-top: 20px; /* Optional: adds spacing from top */
+      }
+      
+      .btn1 {
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: #065CE1;
+        color: white;
+        border-radius: 11px;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+      
+      .btn1:hover {
+        background-color: #004bb5;
+      }
+      
+
+      .btn2 {
+        padding: 10px 20px;
+        text-decoration: none;
+        background-color: black;
+        color: white;
+        border-radius: 11px;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+      }
+
+      
+      .btn2:hover {
+        background-color: white;
+        color:black;
+      }
+      
+
+      .image-container {
+        display: flex;
+        justify-content: center; /* Centers images horizontally */
+        align-items: center; /* Centers images vertically (optional) */
+      
+      
+      }
+      
+     
+      .seamless{
+        letter-spacing:-2px;
+        font-weight: bold;
+        color:black;
+      }
+
+
+
+
+      .text-small{
+        letter-spacing: 2px;
+        font-size: 13px;
+        color:white;
+      }
+
+
+      .text-normal{
+        letter-spacing: -1px;
+        font-size: 18px;
+        color:white;
+        text-align:justify;
+      }
+
+      /* Container styling */
+.sectionfill {
+  background-color: #064CC1;
+  padding: 20px;
+}
+
+.smallwords{
+  font-style: italic; 
+  color:white;
+   font-size:18px;
+}
+
+.sectionfill2 {
+  background-color: #020202;
+  padding: 20px;
+}
+
+
+.arrow-right{
+  font-size:14px; 
+  color:white; 
+  letter-spacing: 2px;
+}
+
+
+.benefits{
+  color:black;
+}
+
+.benefits li::marker {
+  color: #064CC1; /* Set your desired color for the bullet points */
+  font-size: 20px;
+}
+
+
+.benefits1{
+  color:white;
+}
+
+.benefits1 li::marker {
+  color: white; /* Set your desired color for the bullet points */
+  font-size: 20px;
+}
+
+
+.pricing-button {
+  background-color: #004bb5; /* Set background color */
+  color: white; /* Text color */
+  border: 3px solid black; /* Add white border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 20px; /* Add padding for a larger button */
+  font-size: 18px; /* Make the font size larger for emphasis */
+  font-weight: bold; /* Bold text for a stronger appearance */
+  text-transform: uppercase; /* Make text uppercase */
+  text-align: center; /* Center the text inside the button */
+  border-radius: 12px; /* Slightly rounded corners */
+  transition: all 0.3s ease; /* Smooth hover effects */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+.pricing-button:hover {
+  background-color: #003a8c; /* Darker blue on hover */
+  color: #fff; /* Ensure text remains white */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: translateY(-3px); /* Lift the button slightly on hover */
+}
+
+.pricing-button:active {
+  transform: translateY(2px); /* Push down slightly when clicked */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Lighter shadow */
+}
+
+
+.pricing-buttonwhite {
+  background-color: #ffffff; /* Set background color */
+  color:#0b53b8; /* Text color */
+
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  padding: 20px; /* Add padding for a larger button */
+  font-size: 18px; /* Make the font size larger for emphasis */
+  font-weight: bold; /* Bold text for a stronger appearance */
+  text-transform: uppercase; /* Make text uppercase */
+  text-align: center; /* Center the text inside the button */
+  border-radius: 12px; /* Slightly rounded corners */
+  transition: all 0.3s ease; /* Smooth hover effects */
+  cursor: pointer; /* Show pointer on hover */
+}
+
+.pricing-buttonwhite:hover {
+  background-color: #003a8c; /* Darker blue on hover */
+  color: #fff; /* Ensure text remains white */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+  transform: translateY(-3px); /* Lift the button slightly on hover */
+}
+
+.pricing-buttonwhite:active {
+  transform: translateY(2px); /* Push down slightly when clicked */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Lighter shadow */
+}
+
+

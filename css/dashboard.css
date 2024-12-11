@@ -1,0 +1,97 @@
+
+
+
+/* Hide the sidebar and make main content take full width on small screens */
+@media (max-width: 1199.98px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        flex-grow: unset;
+        width: 100%; /* Ensure the main content spans the full width */
+    }
+}
+
+
+.text-black{
+    color:black;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size:16px;
+}
+
+.text-size{
+    color:black;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size:80px;
+}
+
+.text-size2{
+   
+    letter-spacing: -1px;
+
+    font-size:28px;
+}
+
+.card{
+    box-shadow: none;
+}
+
+.text-black4{
+    color:black;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size:17px;
+}
+
+
+.text-black5{
+    color:black;
+    letter-spacing: -1px;
+    font-weight: bold;
+    font-size:30px;
+}
+
+.text-small{
+    color:black;
+   
+   
+    font-size:15px;
+}
+
+
+.prebuilt{
+    display: flex;
+    justify-content: space-between; /* Space elements apart */
+    align-items: center; /* Vertically align items */
+}
+
+
+.pricing-button {
+    background-color: #004bb5; /* Set background color */
+    color: white; /* Text color */
+    border: 3px solid white; /* Add white border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    padding: 10px; /* Add padding for a larger button */
+    font-size: 14px; /* Make the font size larger for emphasis */
+    font-weight: bold; /* Bold text for a stronger appearance */
+    text-transform: uppercase; /* Make text uppercase */
+    text-align: center; /* Center the text inside the button */
+    border-radius: 12px; /* Slightly rounded corners */
+    transition: all 0.3s ease; /* Smooth hover effects */
+    cursor: pointer; /* Show pointer on hover */
+  }
+  
+  .pricing-button:hover {
+    background-color: #003a8c; /* Darker blue on hover */
+    color: #fff; /* Ensure text remains white */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Stronger shadow on hover */
+    transform: translateY(-3px); /* Lift the button slightly on hover */
+  }
+  
+  .pricing-button:active {
+    transform: translateY(2px); /* Push down slightly when clicked */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Lighter shadow */
+  }
+  

@@ -1,0 +1,189 @@
+body{
+    background:#BCD1FF;
+}
+
+.wrapper{
+    padding:40px;
+}
+
+.card{
+    padding:20px;
+    box-shadow: none;
+}
+
+
+.profile-section {
+   
+   
+    box-shadow: none;
+}
+
+.profile-section img {
+    object-fit:contain;
+    width:50px;
+    height: 50px;
+    border: 2px solid #ddd; /* Optional border for avatar */
+}
+
+.user-details .fw-bold {
+    font-size: 11px; /* Name font size */
+    color: #333; /* Dark color for name */
+}
+
+.user-details .text-muted {
+    font-size: 11px; /* Subtitle font size */
+    color: #777; /* Muted gray for subtitle */
+}
+
+.fa-chevron-down {
+    font-size: 11px; /* Adjust size of dropdown icon */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Stack content for smaller screens */
+        align-items: center;
+    }
+
+    .user-details {
+        text-align: center;
+    }
+
+    .ms-auto {
+        margin-top: 5px;
+    }
+}
+
+
+.text-black6{
+    color:black;
+    padding:2px;
+    font-weight: bold;
+    font-size:15px;
+}
+
+.pricing-button {
+    background-color: #004bb5; /* Set background color */
+    color: white; /* Text color */
+   
+  
+    padding: 17px; /* Add padding for a larger button */
+    font-size: 14px; /* Make the font size larger for emphasis */
+    font-weight: bold; /* Bold text for a stronger appearance */
+    text-transform: uppercase; /* Make text uppercase */
+    text-align: center; /* Center the text inside the button */
+    border-radius: 12px; /* Slightly rounded corners */
+   
+    cursor: pointer; /* Show pointer on hover */
+    width: 100%;
+  }
+  
+
+  .custom-accordion {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .custom-accordion-button {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: background-color 0.3s ease, border 0.3s ease-in;
+  }
+
+  .custom-accordion-button:hover {
+   border:1px solid #004bb5;
+  }
+
+  .arrow-icon {
+    font-size: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .arrow-icon.down {
+    transform: rotate(90deg);
+  }
+
+  .custom-accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    background-color: white;
+   
+    border-radius: 8px;
+    padding: 0 20px;
+    margin-bottom: 10px;
+  }
+
+  .custom-accordion-content.open {
+    padding: 15px 20px;
+  }
+
+
+
+  .tab-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .tab-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .tab-button {
+    flex: 1;
+    padding: 9px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius:9px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .tab-button:not(:last-child) {
+    border-right: none; /* No border between tabs */
+  }
+
+  .tab-button.active {
+    background-color: #eaebec;
+    color: black;
+  }
+
+  .tab-content {
+   
+    border-radius: 8px;
+    background-color: white;
+    padding: 3px;
+    display: none;
+    animation: fadeIn 0.3s ease;
+   
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2BAI - Revolutionizing Enterprise with AI-Driven Insights.</title>
+  
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css"
+  rel="stylesheet"
+/>
+
+
+    <!-- Google Fonts -->
+<link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/sdragents.css">
+            
+
+<link
+rel="stylesheet"
+href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+/>
+
+<link rel="icon" href="../img/logo.png" type="image/png" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+
+</head>
+<body>
+
+
+    <div class="wrapper">
+
+
+<div class="container">
+
+
+<div class="row">
+
+
+    <div class="col-md-3 mb-3">
+<div class="card">
+    <center>
+        <img src="../img/dashlogo.svg" class="img-fluid me-2 align-items-center p-2" width="140px" alt="Logo">
+    </center>
+
+    <div class="profile-section d-flex align-items-center p-2 bg-light">
+                
+                
+                
+        <!-- Avatar -->
+        <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg" alt="User Avatar" class="rounded-circle me-2 img-fluid">
+        <!-- User Details -->
+        <div class="user-details">
+            <div class="fw-bold text-black">SDR Agents</div>
+            <div class="text-muted">Sales Development Activities</div>
+        </div>
+        <!-- Dropdown Icon -->
+        <div class="ms-auto">
+            <i class="fa fa-sort text-muted"></i>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div style="margin-top:12px;">
+</div>
+
+
+<a href="#" class=" pricing-button btn " style="text-transform: none;"> Go back to Dashboard  </a>
+
+
+
+<div style="margin-top:12px;">
+</div>
+
+<div class="custom-accordion">
+  <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'tasks')">
+    <h5 class="text-black6"> <i class="fa fa-briefcase"></i> Tasks </h5>
+    <i class="fas fa-arrow-right arrow-icon"></i>
+  </button>
+  <div class="custom-accordion-content" data-accordion="tasks">
+    <div class="tab-buttons">
+      <div class="tab-button active" onclick="Tabs.switch(this, 'tasks', 'all-tasks')">All Tasks</div>
+      <div class="tab-button" onclick="Tabs.switch(this, 'tasks', 'review-tasks')">Review</div>
+    </div>
+    <div id="all-tasks" class="tab-content active" data-parent="tasks">
+      <p>Today</p>
+      <h5 class="text-black6"> No Tasks</h5>
+      <hr>
+    </div>
+    <div id="review-tasks" class="tab-content" data-parent="tasks">
+      <p>Today</p>
+      <h5 class="text-black6"> No Review</h5>
+      <hr>
+    </div>
+  </div>
+  
+   <!-- Logs Section -->
+   <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'logs')">
+    <h5 class="text-black6"> <i class="fa fa-database"></i> Logs </h5>
+    <i class="fas fa-arrow-right arrow-icon"></i>
+  </button>
+  <div class="custom-accordion-content" data-accordion="logs">
+    <div class="tab-buttons">
+      <div class="tab-button active" onclick="Tabs.switch(this, 'logs', 'all-logs')"> <i class="fa fa-phone"> </i> Call Logs</div>
+      <div class="tab-button" onclick="Tabs.switch(this, 'logs', 'review-logs')"><i class="fa fa-envelope"> </i>  Email Logs</div>
+    </div>
+    <div id="all-logs" class="tab-content active" data-parent="logs">
+      <p>Today</p>
+      <h5 class="text-black6"> No Logs</h5>
+      <hr>
+    </div>
+    <div id="review-logs" class="tab-content" data-parent="logs">
+      <p>Today</p>
+      <h5 class="text-black6"> No Emails</h5>
+      <hr>
+    </div>
+  </div>
+
+   <!-- Analytics Section -->
+   <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'analytics')">
+    <h5 class="text-black6"> <i class="fa fa-chart-line"></i> Analytics </h5>
+    <i class="fas fa-arrow-right arrow-icon"></i>
+  </button>
+  <div class="custom-accordion-content" data-accordion="analytics">
+    <div class="tab-buttons">
+      <div class="tab-button active" onclick="Tabs.switch(this, 'analytics', 'dashboard-tab')"> <i class="fa fa-dashboard"> </i> Dashboard</div>
+      <div class="tab-button" onclick="Tabs.switch(this, 'analytics', 'records-tab')"> <i class="fa fa-archive"> </i> Records</div>
+    </div>
+    <div id="dashboard-tab" class="tab-content active" data-parent="analytics">
+      <p>Today</p>
+      <h5 class="text-black6"> No Dashboard Data</h5>
+      <hr>
+    </div>
+    <div id="records-tab" class="tab-content" data-parent="analytics">
+      <p>Today</p>
+      <h5 class="text-black6"> No Records Data</h5>
+      <hr>
+    </div>
+  </div>
+
+  <!-- Data Section -->
+  <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'data')">
+    <h5 class="text-black6"> <i class="fa fa-database"></i> Data </h5>
+    <i class="fas fa-arrow-right arrow-icon"></i>
+  </button>
+  <div class="custom-accordion-content" data-accordion="data">
+    <div class="tab-buttons">
+      <div class="tab-button active" onclick="Tabs.switch(this, 'data', 'leads-tab')"> <i class="fa fa-user"> </i> Leads</div>
+      <div class="tab-button" onclick="Tabs.switch(this, 'data', 'prospects-tab')"> <i class="fa fa-users"> </i> Prospects</div>
+    </div>
+    <div id="leads-tab" class="tab-content active" data-parent="data">
+      <p>Today</p>
+      <h5 class="text-black6"> No Leads</h5>
+      <hr>
+    </div>
+    <div id="prospects-tab" class="tab-content" data-parent="data">
+      <p>Today</p>
+      <h5 class="text-black6"> No Prospects</h5>
+      <hr>
+    </div>
+
+
+    <div style="margin-top:12px;">
+   
+
+    </div>
+</div>
+</div>
+</div>
+    
+    <div class="col-md-6 mb-3">
+        <div class="card">
+            sdsds
+        </div>
+    </div>
+
+      
+    <div class="col-md-3 mb-3">
+        <div class="card">
+            sdsds
+        </div>
+    </div>
+
+
+</div>
+
+</div>
+
+
+    </div>
+    <script src="../includes/test.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+    </body>
+    </html>

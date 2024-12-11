@@ -1,0 +1,191 @@
+/* Sidebar styles */
+
+body{
+background-color: #F1F6FF;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: width 0.3s;
+    flex-shrink: 0; /* Prevent shrinking */
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar .nav-link {
+    color: black;
+    font-size:13px;
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.2s, padding 0.3s;
+}
+
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    background-color: white;
+}
+
+.main-content {
+    margin-left: 250px; /* Default margin to account for the sidebar */
+    padding: 20px;
+    transition: margin-left 0.3s; /* Smooth transition for the margin change */
+}
+
+/* When the sidebar is hidden, reset margin-left */
+@media (max-width: 1199.98px) {
+    .main-content {
+        margin-left: 0;
+    }
+}
+.main-content.collapsed {
+    margin-left: 80px;
+}
+
+.navbar {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+}
+
+.navbar-toggler {
+    background-color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+
+    .sidebar.collapsed {
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        flex-grow: 1; /* Make the main content take up remaining space */
+        padding: 20px;
+    }
+}
+
+
+.profile-section {
+    background-color: #f0f8ff; /* Light blue background */
+   
+    box-shadow: none;
+}
+
+.profile-section img {
+    object-fit:contain;
+    width:50px;
+    height: 50px;
+    border: 2px solid #ddd; /* Optional border for avatar */
+}
+
+.user-details .fw-bold {
+    font-size: 11px; /* Name font size */
+    color: #333; /* Dark color for name */
+}
+
+.user-details .text-muted {
+    font-size: 11px; /* Subtitle font size */
+    color: #777; /* Muted gray for subtitle */
+}
+
+.fa-chevron-down {
+    font-size: 11px; /* Adjust size of dropdown icon */
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .profile-section {
+        flex-direction: column; /* Stack content for smaller screens */
+        align-items: center;
+    }
+
+    .user-details {
+        text-align: center;
+    }
+
+    .ms-auto {
+        margin-top: 5px;
+    }
+}
+
+.activate{
+    background-color:lightblue;
+}
+
+.smalltexts{
+    font-size: 10px;
+    letter-spacing: 2px;
+    padding:13px;
+    font-weight: bold;
+    margin-top: 0;
+    margin-bottom: 0rem !important;
+}
+
+.smallbar{
+    background-color:white;
+    border-radius:14px;
+    padding:30px;
+    display: flex;
+    justify-content: space-between; /* Space elements apart */
+    align-items: center; /* Vertically align items */
+}
+
+.dropdown-toggle{
+    border:none;
+    background-color:transparent;
+}
+
+
+.dropdown-item{
+    font-size:12px;
+}
+
+
+
+.left {
+    display: flex;
+    align-items: center; /* Vertically align dropdown items */
+  }
+  
+  .right {
+    display: flex;
+    gap: 10px; /* Add spacing between icons */
+    align-items: center; /* Vertically align icons */
+  }
+
+  .dropdown{
+    font-size:14px;
+  }
+
+  .link-color{
+    color:black;
+  }
+
+
+.chartDiv{
+    margin: 8px auto;
+    padding:15px;
+    border-radius:10px;
+}
+

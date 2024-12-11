@@ -1,0 +1,315 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2BAI - Revolutionizing Enterprise with AI-Driven Insights.</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- MDB5 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" />
+    
+    <!-- Sidebar CSS -->
+    <link rel="icon" href="../img/logo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+       
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <center>
+            <img src="../img/dashlogo.svg" class="img-fluid me-2 align-items-center p-2" width="140px" alt="Logo">
+        </center>
+
+            <div class="profile-section d-flex align-items-center p-2 bg-light">
+                
+                
+                
+                <!-- Avatar -->
+                <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg" alt="User Avatar" class="rounded-circle me-2 img-fluid">
+                <!-- User Details -->
+                <div class="user-details">
+                    <div class="fw-bold">Cyber Surf</div>
+                    <div class="text-muted">John Doe</div>
+                </div>
+                <!-- Dropdown Icon -->
+                <div class="ms-auto">
+                    <i class="fa fa-sort text-muted"></i>
+                </div>
+            </div>
+
+            <p class="smalltexts">MAIN MENU</p>
+            <a href="dashboard.html" class="nav-link" id="dashboard-link"><i class="fa fa-th-large"></i> Dashboard</a>
+            <a href="agents.html" class="nav-link" id="agents-link"><i class="fa fa-user"></i> Agents</a>
+            <a href="integrations.html" class="nav-link" id="integrations-link"><i class="fa fa-plug"></i> Integrations</a>
+
+            <p class="smalltexts">MANAGEMENT</p>
+            <a href="templates.html" class="nav-link" id="templates-link"><i class="fa fa-file-pdf-o"></i> Templates</a>
+            <a href="automations.html" class="nav-link" id="automations-link"><i class="fa fa-cubes"></i> Automations</a>
+
+            <p class="smalltexts">ACCOUNT SETTINGS</p>
+            <a href="userprofile.html" class="nav-link" id="userprofile"><i class="fa fa-user-circle"></i> User Profile</a>
+            <a href="team-management.html" class="nav-link" id="team-management"><i class="fa fa-group"></i> Team Management</a>
+
+            <p class="smalltexts">BILLINGS</p>
+            <a href="subscriptions.html" class="nav-link" id="subscriptions"><i class="fa fa-tasks"></i> Subscriptions</a>
+            <a href="paymentmethod.html" class="nav-link" id="paymentmethod"><i class="fa fa-money"></i> Payment Methods</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="main-content">
+            <div class="container">
+            <div class="smallbar ">
+
+                  <div class="left">
+            <div class="dropdown">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false">
+                Dashboard
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                  <li><a class="dropdown-item" href="agents.html">Agents</a></li>
+                  <li><a class="dropdown-item" href="integrations.html">Integrations</a></li>
+
+                  <li><a class="dropdown-item" href="templates.html"> Templates </a></li>
+                  <li><a class="dropdown-item" href="automations.html">Automations</a></li>
+                  <li><a class="dropdown-item" href="userprofile.html"> User Profile </a></li>
+
+                  <li><a class="dropdown-item" href="templates.html"> Team Management </a></li>
+                  <li><a class="dropdown-item" href="subscriptions.html"> Subscriptions</a></li>
+                  <li><a class="dropdown-item" href="paymentmethods.html"> Payment Methods </a></li>
+
+                <script src="test.js"></script>
+
+
+                </ul>
+              </div>
+</div>
+
+<div class="right">
+   <a href="#" class="link-color"> <i class="fa fa-search"></i> </a> 
+   <a href="#" class="link-color"> <i class="fa fa-bell"></i> </a>
+   <a href="#" class="link-color"> <i class="fa fa-share-alt"></i> </a>
+</div>
+
+
+            </div>
+
+            <div class="spacing-extra" style="margin-top:30px;"></div>
+
+            
+<div class="row">
+
+<div class="col-md-3 mb-3">
+
+    <div class="card p-4">
+
+        <img src="../img/profile.png" class="img-fluid" width="30px">
+        <h5 class="text-black"> Agents</h5>
+
+        <h5 class="text-size"> 52 </h5>
+
+    </div>
+
+</div>
+
+
+
+<div class="col-md-3 mb-3">
+
+    <div class="card p-4" style="background-color:#000000;">
+
+        <img src="../img/profile.png" class="img-fluid" width="30px">
+        <h5 class="text-black text-white"> Custom Agents</h5>
+
+        <h5 class="text-size text-white"> 14 </h5>
+
+    </div>
+
+</div>
+
+
+
+<div class="col-md-6 mb-3">
+
+    <div class="card " style="background-color:#064CC1; height:100%; padding:32px;">
+
+       
+        <h5 class="text-black text-white"> Good Afternoon, John</h5>
+
+        <h5 class="text-size2 text-white"> Want to take a walk around ? </h5>
+
+        
+        <a target="_blank" class="dashbutton btn btn-lg" href="#" rel="nofollow" style="border: 3px solid white; font-weight: bold; padding: 13px; font-size: 15px; color: white; text-transform: none; border-radius: 10px; width:190px;">
+            Take a quick tour
+        </a>
+
+    </div>
+
+</div>
+
+
+
+</div>
+
+<div style="margin-top: 20px;"></div>
+
+
+<div class="prebuilt">
+
+<div class="left">
+    <h3 class="text-black4"> Prebuilt Agents by B2B Ai </h3>
+</div>
+
+
+<div class="right">
+   <a href="#" class="text-black"> <h3 class="text-black4">Show More <i class="fa fa-sort"></i> </h3> </a>
+</div>
+
+
+
+</div>
+
+
+
+<div class="row">
+
+    <div class="col-md-4 mb-3">
+    
+       
+        <div class="card p-4">
+    
+            <img src="../img/profile.png" class="img-fluid" width="30px">
+            <h5 class="text-black5"> Customer Service Agent </h5>
+    
+            <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
+    
+
+            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+
+
+        </div>
+
+    </div>
+
+
+    
+    <div class="col-md-4 mb-3">
+    
+       
+        <div class="card p-4">
+    
+            <img src="../img/profile.png" class="img-fluid" width="30px">
+            <h5 class="text-black5"> Customer Service Agent </h5>
+    
+            <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
+    
+
+            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+
+
+        </div>
+
+    </div>
+
+
+
+    <div class="col-md-4 mb-3">
+    
+        <div class="card p-4">
+    
+            <img src="../img/profile.png" class="img-fluid" width="30px">
+            <h5 class="text-black5"> Customer Service Agent </h5>
+    
+            <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
+    
+
+            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+
+
+        </div>
+    
+    </div>
+
+
+
+    <div class="col-md-4 mb-3">
+    
+        <div class="card p-4">
+    
+            <img src="../img/profile.png" class="img-fluid" width="30px">
+            <h5 class="text-black5"> Customer Service Agent </h5>
+    
+            <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
+    
+
+            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+
+
+        </div>
+    
+    </div>
+
+    
+    <div class="col-md-4 mb-3">
+    
+        <div class="card p-4">
+    
+            <img src="../img/profile.png" class="img-fluid" width="30px">
+            <h5 class="text-black5"> Customer Service Agent </h5>
+    
+            <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
+    
+
+            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+
+
+        </div>
+    
+    </div>
+
+
+    
+    <div class="col-md-4 mb-3">
+    
+        <div class="card p-4">
+    
+            <img src="../img/profile.png" class="img-fluid" width="30px">
+            <h5 class="text-black5"> Customer Service Agent </h5>
+    
+            <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
+    
+
+            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+
+
+        </div>
+    
+    </div>
+    
+    </div>
+
+        </div>
+        </div>
+    </div>
+
+   
+    <!-- MDB -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+  ></script>
+
+</body>
+</html>

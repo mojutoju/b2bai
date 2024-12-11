@@ -1,0 +1,59 @@
+
+@import url('https://fonts.cdnfonts.com/css/roboto');
+
+
+ body{
+font-family: 'Roboto';
+
+  background-color: #F1F6FF;
+}
+
+
+.navbar {
+
+background-color: transparent !important;
+  box-shadow: none !important;
+ 
+}
+
+.navbar-nav > li{
+    padding-left:10px;
+    padding-right:10px;
+  }
+
+  .navbar-nav > li{
+    margin-left:10px;
+    margin-right:10px;
+  }
+
+
+/* If the screen size is 1200px wide or more, set the font-size to 80px */
+@media (min-width: 1200px) {
+  .responsive-font-example {
+    font-size: 36px;
+  }
+}
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+@media (max-width: 1199.98px) {
+  .responsive-font-example {
+    font-size: 30px;
+  }
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
+    background-color: black;
+    color:white;
+    border-radius: 0px 12px 12px 0px;
+    border-bottom: 3px solid #F64D00;
+}
+
+.nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link:hover {
+   
+    border-radius:12px;
+}
+
+.nav-link .btn-lg{
+  text-transform: none;
+  color: black;
+}
+
