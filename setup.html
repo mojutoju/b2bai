@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDR Agent Setup Wizard</title>
+ <!-- MDB -->
+ <link
+ href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css"
+ rel="stylesheet"
+ />
+ 
+    <style>
+        .hidden { display: none; }
+
+        .largetext{
+            font-size:60px;
+            letter-spacing: -2px;
+            color:black;
+            font-weight: 800;
+           
+        }
+
+        
+        .largetexter{
+            font-size:30px;
+            letter-spacing: -2px;
+            color:black;
+            font-weight: 800;
+        }
+
+        .btn-success{
+            padding:13px;
+            width: 100%;
+            font-size:16px;
+            font-weight: bold;
+            margin-bottom:14px;
+            margin-top:10px;
+        }
+
+        
+        .btn-primary{
+            padding:13px;
+            width: 100%;
+            font-size:16px;
+            font-weight: bold;
+            margin-bottom:14px;
+            margin-top:10px;
+        }
+
+
+        .btn-secondary{
+            padding:13px;
+            width: 100%;
+            font-size:16px;
+            font-weight: bold;
+            margin-bottom:14px;
+        }
+
+        .btn-danger{
+            padding:13px;
+            width: 100%;
+            font-size:16px;
+            font-weight: bold;
+            margin-bottom:14px;
+        }
+
+        .form-control{
+            padding:16px;
+            margin-top:15px;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <center>
+                <img src="https://imageio.forbes.com/specials-images/imageserve/65fcc9981861972da1555f96/Chatbot-Artificial-Intelligence-abstract-concept-vector-illustration-/960x0.jpg?format=jpg&width=960" class="img-fluid "> </center>
+
+
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <h2 class="largetext"> Setup your SDR Agent</h2>
+                <hr>
+                <div id="stepContent"></div>
+            </div>
+
+        </div>
+       
+       
+    </div>
+
+    <script>
+        // Step Data
+        const steps = [
+            { label: "<h1 class='largetexter'>Confirm</h1>", content: "Welcome to the SDR Agent Setup Wizard! <br>This setup will guide you through configuring your agent for optimal performance. <br> <br>  <button class='btn btn-success btn-sm' onclick='handleStep(1, true)'>NEXT</button>" },
+            { label: "Details", content: "Please provide your details for the setup.<br>This will ensure your agent is configured correctly. <br>  <button class='btn btn-success btn-sm' onclick='handleStep(2, true)'>NEXT</button> <button class='btn btn-secondary btn-sm' onclick='handleStep(0)'>Go Back</button> "  },
+            { label: "Zapier Account", content: "Do you have a Zapier account?<br>Your Zapier account helps automate tasks for seamless integration. <br>  <button class='btn btn-success btn-sm' onclick='handleStep(3, true)'>YES</button> <button class='btn btn-danger btn-sm' onclick='handleStep(1)'>No</button> " },
+            { label: "Zapier API Key", content: "Provide your Zapier API key to link your account.<br>Your API Key can be found in your Zapier settings.<br><input type='text' id='zapierApiKey' required='' placeholder='Enter API Key' class='form-control'><div id='zapierApiKeyError' class='text-danger'></div> <br>  <button class='btn btn-success btn-sm' onclick='handleStep(4, true)'>NEXT</button> <button class='btn btn-secondary btn-sm' onclick='handleStep(1)'>Go Back</button> " },
+            { label: "Step 5", content: "Email Service<br>Would you like the SDR Agent to use Email Service?<br><button class='btn btn-success btn-sm' onclick='handleStep(5, true)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(0, false)'>No</button>" },
+            { label: "Step 6", content: "Select your email service<br><input type='radio' name='emailService' id='emailGmail' required> Gmail<br><input type='radio' name='emailService' id='emailOutlook' required> Outlook<br><button class='btn btn-primary btn-sm' onclick='proceedWithEmailService()'>Proceed</button><button class='btn btn-secondary btn-sm' onclick='handleStep(4)'>Go Back</button>" },
+            { label: "Step 7 (Gmail)", content: "You have selected Gmail as your email service. Would you like to proceed? <br><button class='btn btn-success btn-sm' onclick='handleStep(8)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(5)'>No</button>" },
+            { label: "Step 7 (Outlook)", content: "You have selected Outlook as your email service. Would you like to proceed? <br><button class='btn btn-success btn-sm' onclick='handleStep(8)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(5)'>No</button>" },
+            { label: "Step 8", content: "Email Credentials <br>Please provide your email credentials.<br><br><input type='email' id='emailField' required placeholder='Enter your email' class='form-control '><br><button class='btn btn-primary btn-sm' onclick='saveEmailCredentials()'>Proceed</button><button class='btn btn-secondary btn-sm' onclick='handleStep(6)'>Go Back</button>" },
+            { label: "Step 9", content: "Voice Over Assistance <br>Would you like to activate Voice Over Assistance in your SDR Agent? <br><button class='btn btn-success btn-sm' onclick='handleStep(10, true)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(0, false)'>No</button>" },
+            { label: "Step 10", content: "Call Service <br>Select your Voice Over Assistance service<br><input type='radio' name='callService' id='voiceTwilio' required> Twilio<br><input type='radio' name='callService' id='voiceTeams' required> Teams<br><button class='btn btn-primary btn-sm' onclick='proceedWithCallService()'>Proceed</button><button class='btn btn-secondary btn-sm' onclick='handleStep(6)'>Go Back</button>" },
+            { label: "Step 11 (Twilio)", content: "You have selected Twilio as your call service. Would you like to proceed? <br><button class='btn btn-success btn-sm' onclick='handleStep(13)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(10)'>No</button>" },
+            { label: "Step 11 (Teams)", content: "You have selected Teams as your call service. Would you like to proceed? <br><button class='btn btn-success btn-sm' onclick='handleStep(14)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(10)'>No</button>" },
+            { label: "Step 12", content: "Call Service Numbers <br>Please provide your call service phone numbers. <br><input type='text' id='callServiceNumber' required placeholder='Enter your service phone number' class='form-control'><br><button class='btn btn-primary btn-sm' onclick='saveCallServiceNumber()'>Proceed</button><button class='btn btn-secondary btn-sm' onclick='handleStep(11)'>Go Back</button>" },
+            { label: "Step 13", content: "Schedule Agent Services <br>Schedule your agent's email and call service. Your agent will work according to this schedule.<br><select id='timeZone' class='form-select'><option value=''>Select Timezone</option><option value='EST'>EST</option><option value='PST'>PST</option></select><br><input type='time' id='startTime' required class='form-control'><br><input type='time' id='endTime' required class='form-control'><br><div><input type='checkbox' id='dayMonday'> Monday<br><input type='checkbox' id='dayTuesday'> Tuesday<br><input type='checkbox' id='dayWednesday'> Wednesday<br><input type='checkbox' id='dayThursday'> Thursday<br><input type='checkbox' id='dayFriday'> Friday</div><br><button class='btn btn-primary btn-sm' onclick='saveSchedule()'>Proceed</button><button class='btn btn-secondary btn-sm' onclick='handleStep(13)'>Go Back</button>" },
+            { label: "Step 14", content: "Confirm Schedule <br>You have scheduled a workflow for your agent. Would you like to proceed? <br><button class='btn btn-success btn-sm' onclick='handleStep(16)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(0)'>No</button>" },
+            { label: "Step 15", content: "Save Changes <br>Would you like to save these changes? You can change these options later. <br><button class='btn btn-success btn-sm' onclick='saveDataToFile()'>Save Changes</button><button class='btn btn-danger btn-sm' onclick='handleStep(14)'>Cancel</button>" }
+        ];
+
+        let currentStep = 0;
+        let formData = {};
+
+        function handleStep(stepNum) {
+            if (stepNum >= 0 && stepNum < steps.length) {
+                currentStep = stepNum;
+            }
+            displayStep(currentStep);
+        }
+
+        function proceed() {
+            switch (currentStep) {
+                case 5:  // Step 5: Proceed with email service choice
+                    proceedWithEmailService();
+                    break;
+                case 9:  // Step 9: Proceed with call service choice
+                    proceedWithCallService();
+                    break;
+                default:
+                    currentStep++;
+                    displayStep(currentStep);
+                    break;
+            }
+        }
+
+        function proceedWithEmailService() {
+    if (document.getElementById('emailGmail').checked) {
+        formData.emailService = 'Gmail';
+        currentStep = 6;  // If Gmail is selected, go to Step 7 for Gmail
+    } else if (document.getElementById('emailOutlook').checked) {
+        formData.emailService = 'Outlook';
+        currentStep = 7;  // If Outlook is selected, go to Step 7 for Outlook
+    }
+    displayStep(currentStep);
+}
+
+function proceedWithCallService() {
+    if (document.getElementById('voiceTwilio').checked) {
+        formData.callService = 'Twilio';
+        currentStep = 11;  // If Twilio is selected, go to Step 11 for Twilio
+    } else if (document.getElementById('voiceTeams').checked) {
+        formData.callService = 'Teams';
+        currentStep = 12;  // If Teams is selected, go to Step 11 for Teams
+    }
+    displayStep(currentStep);
+}
+
+        function saveEmailCredentials() {
+            formData.email = document.getElementById('emailField').value;
+            handleStep(9);
+        }
+
+        function saveCallServiceNumber() {
+            formData.callServiceNumber = document.getElementById('callServiceNumber').value;
+            handleStep(14);
+        }
+
+        function saveSchedule() {
+            formData.schedule = {
+                timeZone: document.getElementById('timeZone').value,
+                startTime: document.getElementById('startTime').value,
+                endTime: document.getElementById('endTime').value,
+                days: [
+                    document.getElementById('dayMonday').checked ? 'Monday' : '',
+                    document.getElementById('dayTuesday').checked ? 'Tuesday' : '',
+                    document.getElementById('dayWednesday').checked ? 'Wednesday' : '',
+                    document.getElementById('dayThursday').checked ? 'Thursday' : '',
+                    document.getElementById('dayFriday').checked ? 'Friday' : ''
+                ].filter(Boolean) // Only include days that are checked
+            };
+            handleStep(15);
+        }
+
+        function saveDataToFile() {
+            const blob = new Blob([JSON.stringify(formData, null, 4)], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'agent-config.json';
+            link.click();
+        }
+
+        function displayStep(stepNum) {
+            document.getElementById('stepContent').innerHTML = `
+                <h2>${steps[stepNum].label}</h2>
+                <p>${steps[stepNum].content}</p>
+            `;
+
+            document.getElementById('previousBtn').style.display = stepNum > 0 ? 'inline-block' : 'none';
+            document.getElementById('nextBtn').style.display = stepNum < steps.length - 1 ? 'inline-block' : 'none';
+            document.getElementById('proceedBtn').style.display = stepNum === 5 || stepNum === 9 ? 'inline-block' : 'none'; // Show Proceed on specific steps
+        }
+
+        // Initialize display on the first step
+        displayStep(currentStep);
+
+
+        function displayStep(stepNum) {
+    document.getElementById('stepContent').innerHTML = `
+        <h2>${steps[stepNum].label}</h2>
+        <p>${steps[stepNum].content}</p>
+    `;
+
+    // Determine whether to show or hide buttons
+    const isYesNoStep = steps[stepNum].content.includes("Would you like to proceed?");
+    const isConfirmationStep = steps[stepNum].label.includes("Step 7") || steps[stepNum].label.includes("Step 11");
+
+    document.getElementById('previousBtn').style.display = (stepNum > 0 && !isYesNoStep) ? 'inline-block' : 'none';
+    document.getElementById('nextBtn').style.display = (stepNum < steps.length - 1 && !isYesNoStep && !isConfirmationStep) ? 'inline-block' : 'none';
+    document.getElementById('proceedBtn').style.display = (isYesNoStep || isConfirmationStep) ? 'none' : 'inline-block';  // Show 'Proceed' in regular form steps
+    
+    // Hide proceed button on yes/no decision steps, and hide previous/next where applicable
+    if (isYesNoStep || isConfirmationStep) {
+        document.getElementById('previousBtn').style.display = 'none';
+        document.getElementById('nextBtn').style.display = 'none';
+    }
+}
+
+    </script>
+</body>
+</html>
