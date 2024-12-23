@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <form class="d-flex input-group w-auto">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="login.html" style="padding: 13px; font-size: 13px; color: black; font-weight: bold; border-radius: 20px; width: 130px;">Contact Us</a>
+                <a class="nav-link" href="includes/login.html" style="padding: 13px; font-size: 13px; color: black; font-weight: bold; border-radius: 20px; width: 130px;">Contact Us</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link btn btn-lg" href="signup.html" style="background-color: #065CE1; color: white; font-size: 13px; font-weight: bold; border-radius: 12px; width: 120px;">Try B2B AI</a>

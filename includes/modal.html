@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDR Agent Setup</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(90deg, #f0f4f7, #e0e7ec);
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container {
+            max-width: 600px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        .card-header {
+            background-color: #0078d4;
+            color: white;
+            font-weight: bold;
+            border-bottom: 1px solid #ccc;
+        }
+        .card-footer {
+            background-color: #f0f4f7;
+        }
+        #stepContent {
+            min-height: 150px;
+        }
+        .btn-primary {
+            background-color: #0078d4;
+            border-color: #0078d4;
+        }
+        .btn-secondary {
+            background-color: #f3f4f6;
+            color: black;
+            border: 1px solid #ccc;
+        }
+        .progress {
+            height: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header text-center">
+            <h5 id="stepLabel">Confirm</h5>
+        </div>
+        <div class="progress">
+            <div id="progressBar" class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+        <div class="card-body" id="stepContent">
+            <!-- Content dynamically inserted by JS -->
+        </div>
+        <div class="card-footer d-flex justify-content-between">
+            <button type="button" id="goBackButton" class="btn btn-secondary" style="display: none;">&larr; Back</button>
+            <button type="button" id="nextButton" class="btn btn-primary">Next &rarr;</button>
+        </div>
+    </div>
+</div>
+
+<script>
+const steps = [
+    {
+        label: "Welcome",
+        content: `Welcome to the SDR Agent Setup Wizard!<br><br>
+                  This setup will guide you through configuring your agent for optimal performance.`
+    },
+    {
+        label: "Details",
+        content: `Please provide your details for the setup.<br>
+                  This will ensure your agent is configured correctly.`
+    },
+    {
+        label: "Zapier Account",
+        content: `Do you have a Zapier account?<br>
+                  Your Zapier account helps automate tasks for seamless integration.`
+    },
+    {
+        label: "Zapier API Key",
+        content: `Provide your Zapier API key to link your account.<br>
+                  Your API Key can be found in your Zapier settings.<br>
+                  <input type='text' id='zapierApiKey' required placeholder='Enter API Key' class='form-control'>
+                  <div id='zapierApiKeyError' class='text-danger'></div>`
+    },
+    {
+        label: "Step 5",
+        content: `Email Service <br>
+                  Would you like the SDR Agent to use Email Service? <br>
+                  <button class='btn btn-success btn-sm' onclick='handleStep(true)'>Yes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>No</button>`
+    },
+    {
+        label: "Step 6",
+        content: `Select your email service <br>
+                  <input type='radio' name='emailService' id='emailGmail'> Gmail<br>
+                  <input type='radio' name='emailService' id='emailOutlook'> Outlook<br>
+                  <button class='btn btn-primary btn-sm' onclick='proceedWithEmailService()'>Proceed</button>
+                  <button class='btn btn-secondary btn-sm' onclick='handleStep(false)'>Go Back</button>`
+    },
+    {
+        label: "Step 7 (Gmail)",
+        content: `You have selected Gmail as your email service. Would you like to proceed? <br>
+                  Allowing Gmail as your email service will let your SDR Agent send and receive mails and schedule events. <br>
+                  <button class='btn btn-success btn-sm' onclick='handleStep(true)'>Yes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>No</button>`
+    },
+    {
+        label: "Step 7 (Outlook)",
+        content: `You have selected Outlook as your email service. Would you like to proceed? <br>
+                  Allowing Outlook as your email service will let your SDR Agent send and receive mails and schedule events. <br>
+                  <button class='btn btn-success btn-sm' onclick='handleStep(true)'>Yes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>No</button>`
+    },
+    {
+        label: "Step 8",
+        content: `Email Credentials <br>
+                  Please provide your email credentials. <br>
+                  <input type='email' id='emailField' required placeholder='Enter your email' class='form-control'><br>
+                  <button class='btn btn-primary btn-sm' onclick='saveEmailCredentials()'>Proceed</button>
+                  <button class='btn btn-secondary btn-sm' onclick='handleStep(false)'>Go Back</button>`
+    },
+    {
+        label: "Step 9",
+        content: `Voice Over Assistance <br>
+                  Would you like to activate Voice Over Assistance in your SDR Agent? <br>
+                  <button class='btn btn-success btn-sm' onclick='handleStep(true)'>Yes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>No</button>`
+    },
+    {
+        label: "Step 10",
+        content: `Call Service <br>
+                  Select your Voice Over Assistance service <br>
+                  <input type='radio' name='callService' id='voiceTwilio'> Twilio<br>
+                  <input type='radio' name='callService' id='voiceTeams'> Teams<br>
+                  <button class='btn btn-primary btn-sm' onclick='proceedWithCallService()'>Proceed</button>
+                  <button class='btn btn-secondary btn-sm' onclick='handleStep(false)'>Go Back</button>`
+    },
+    {
+        label: "Step 11 (Twilio)",
+        content: `You have selected Twilio as your call service. Would you like to proceed? <br>
+                  <button class='btn btn-success btn-sm' onclick='handleStep(true)'>Yes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>No</button>`
+    },
+    {
+        label: "Step 11 (Teams)",
+        content: `You have selected Teams as your call service. Would you like to proceed? <br>
+                  <button class='btn btn-success btn-sm' onclick='handleStep(true)'>Yes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>No</button>`
+    },
+    {
+        label: "Step 12",
+        content: `Call Service Numbers <br>
+                  Please provide your call service phone numbers. <br>
+                  <input type='text' id='callServiceNumber' placeholder='Enter your service phone number' class='form-control'><br>
+                  <button class='btn btn-primary btn-sm' onclick='saveCallServiceNumber()'>Proceed</button>
+                  <button class='btn btn-secondary btn-sm' onclick='handleStep(false)'>Go Back</button>`
+    },
+    {
+        label: "Step 13",
+        content: `Schedule Agent Services <br>
+                  Schedule your agent's email and call service. Your agent will work according to this schedule. <br>
+                  <select id='timeZone' class='form-select'>
+                      <option value=''>Select Timezone</option>
+                      <option value='EST'>EST</option>
+                      <option value='PST'>PST</option>
+                  </select><br>
+                  <input type='time' id='startTime' class='form-control'><br>
+                  <input type='time' id='endTime' class='form-control'><br>
+                  <div>
+                      <input type='checkbox' id='dayMonday'> Monday<br>
+                      <input type='checkbox' id='dayTuesday'> Tuesday<br>
+                      <!-- Add other days similarly -->
+                  </div>
+                  <button class='btn btn-primary btn-sm' onclick='saveSchedule()'>Proceed</button>
+                  <button class='btn btn-secondary btn-sm' onclick='handleStep(false)'>Go Back</button>`
+    },
+    {
+        label: "Step 14",
+        content: `Confirm Schedule <br>
+                  You have scheduled a workflow for your agent. Would you like to proceed? <br>
+                  <button class='btn btn-success btn-sm' onclick='handleStep(true)'>Yes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>No</button>`
+    },
+    {
+        label: "Step 15",
+        content: `Save Changes <br>
+                  Would you like to save these changes? You can change these options later. <br>
+                  <button class='btn btn-success btn-sm' onclick='saveDataToFile()'>Save Changes</button>
+                  <button class='btn btn-danger btn-sm' onclick='handleStep(false)'>Cancel</button>`
+    }
+];
+
+let currentStep = 0;
+let userData = {};
+
+function renderStep() {
+    const step = steps[currentStep];
+    document.getElementById('stepLabel').innerText = step.label;
+    document.getElementById('stepContent').innerHTML = step.content;
+
+    document.getElementById('goBackButton').style.display = currentStep > 0 ? 'block' : 'none';
+    document.getElementById('progressBar').style.width = `${((currentStep + 1) / steps.length) * 100}%`;
+}
+
+function handleStep(next) {
+    if (next) {
+        currentStep++;
+    } else {
+        currentStep--;
+    }
+
+    if (currentStep < steps.length) {
+        renderStep();
+    } else {
+        finalizeSetup();
+    }
+}
+
+
+
+function proceedWithEmailService() {
+    const isGmail = document.getElementById('emailGmail').checked;
+    const isOutlook = document.getElementById('emailOutlook').checked;
+    if (isGmail) {
+        console.log('Gmail selected');
+        navigateToStep("Step 7 (Gmail)");
+    } else if (isOutlook) {
+        console.log('Outlook selected');
+        navigateToStep("Step 7 (Outlook)");
+    } else {
+        console.warn('No email service selected');
+        alert('Please select an email service to proceed.');
+    }
+}
+
+function navigateToStep(label) {
+    // Logic to navigate to the correct step by label
+    console.log(`Navigating to step: ${label}`);
+}
+
+function finalizeSetup() {
+    document.getElementById('stepLabel').innerText = 'Setup Complete';
+    document.getElementById('stepContent').innerHTML = '<p>Your setup information has been saved. Thank you for using SDR Agent!</p>';
+    document.getElementById('goBackButton').style.display = 'none';
+    document.getElementById('nextButton').style.display = 'none';
+    saveDataToFile();
+}
+
+function saveDataToFile() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(userData));
+    const downloadAnchor = document.createElement('a');
+    downloadAnchor.setAttribute("href", dataStr);
+    downloadAnchor.setAttribute("download", "setup_data.json");
+    document.body.appendChild(downloadAnchor);
+    downloadAnchor.click();
+    downloadAnchor.remove();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    renderStep();
+
+    document.getElementById('nextButton').addEventListener('click', () => handleStep(true));
+    document.getElementById('goBackButton').addEventListener('click', () => handleStep(false));
+});
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"></script>
+</body>
+</html>

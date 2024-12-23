@@ -19,8 +19,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+      </div>
+      
     <div class="wrapper">
        
+ 
         <!-- Sidebar -->
         <div class="sidebar" id="sidebar">
             <center>
@@ -53,6 +59,10 @@
             <a href="templates.html" class="nav-link" id="templates-link"><i class="fa fa-file-pdf-o"></i> Templates</a>
             <a href="automations.html" class="nav-link" id="automations-link"><i class="fa fa-cubes"></i> Automations</a>
 
+
+            <p class="smalltexts">TOOLS</p>
+            <a href="knowledge.html" class="nav-link" id="automations-link"><i class="fa fa-book"></i> Knowledge </a>
+
             <p class="smalltexts">ACCOUNT SETTINGS</p>
             <a href="userprofile.html" class="nav-link" id="userprofile"><i class="fa fa-user-circle"></i> User Profile</a>
             <a href="team-management.html" class="nav-link" id="team-management"><i class="fa fa-group"></i> Team Management</a>
@@ -64,7 +74,7 @@
 
         <!-- Main Content -->
         <div class="main-content" id="main-content">
-            <div class="container">
+            <div class="container-fluid">
             <div class="smallbar ">
 
                   <div class="left">
@@ -84,6 +94,7 @@
 
                   <li><a class="dropdown-item" href="templates.html"> Templates </a></li>
                   <li><a class="dropdown-item" href="automations.html">Automations</a></li>
+                  <li><a class="dropdown-item" href="knowledge.html">Knowledge</a></li>
                   <li><a class="dropdown-item" href="userprofile.html"> User Profile </a></li>
 
                   <li><a class="dropdown-item" href="templates.html"> Team Management </a></li>
@@ -151,7 +162,7 @@
         <h5 class="text-size2 text-white"> Want to take a walk around ? </h5>
 
         
-        <a target="_blank" class="dashbutton btn btn-lg" href="#" rel="nofollow" style="border: 3px solid white; font-weight: bold; padding: 13px; font-size: 15px; color: white; text-transform: none; border-radius: 10px; width:190px;">
+        <a target="_blank" class="dashbutton btn btn-lg" href="#" rel="nofollow" style="border: 2px solid white; font-weight: bold; padding: 6px; font-size: 12px; color: white; text-transform: none; border-radius: 10px; width:190px;">
             Take a quick tour
         </a>
 
@@ -185,7 +196,7 @@
 
 <div class="row">
 
-    <div class="col-md-4 mb-3">
+    <div class="col-md-3 mb-3">
     
        
         <div class="card p-4">
@@ -196,7 +207,7 @@
             <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
     
 
-            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+            <a href="setup.html" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
 
 
         </div>
@@ -205,7 +216,7 @@
 
 
     
-    <div class="col-md-4 mb-3">
+    <div class="col-md-3 mb-3">
     
        
         <div class="card p-4">
@@ -216,7 +227,7 @@
             <h5 class="text-small"> Effortlessly handle customer inquiries with our AI-powered Customer Service Agent. Designed to provide instant, accurate responses, it streamlines support, resolves issues faster, and ensures 24/7 availability for your customers. </h5>
     
 
-            <a href="#" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
+            <a href="chat.html" class=" pricing-button " style="text-transform: none;"> Use Agent </a>
 
 
         </div>
@@ -225,7 +236,7 @@
 
 
 
-    <div class="col-md-4 mb-3">
+    <div class="col-md-3 mb-3">
     
         <div class="card p-4">
     
@@ -244,7 +255,7 @@
 
 
 
-    <div class="col-md-4 mb-3">
+    <div class="col-md-3 mb-3">
     
         <div class="card p-4">
     
@@ -262,7 +273,7 @@
     </div>
 
     
-    <div class="col-md-4 mb-3">
+    <div class="col-md-3 mb-3">
     
         <div class="card p-4">
     
@@ -281,7 +292,7 @@
 
 
     
-    <div class="col-md-4 mb-3">
+    <div class="col-md-3 mb-3">
     
         <div class="card p-4">
     
@@ -303,13 +314,13 @@
         </div>
         </div>
     </div>
-
+  
    
     <!-- MDB -->
     <script
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
   ></script>
-
+  <script src="../js/dashboard.js"></script>
 </body>
 </html>

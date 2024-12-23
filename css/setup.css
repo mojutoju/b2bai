@@ -1,0 +1,84 @@
+html{
+    zoom:90%;
+}
+
+body{
+    background-color:#F1F6FF;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hidden { display: none; }
+
+.largetext{
+    font-size:60px;
+    letter-spacing: -2px;
+    color:black;
+    font-weight: 800;
+   
+}
+
+
+.largetexter{
+    font-size:30px;
+    letter-spacing: -2px;
+    color:black;
+    font-weight: 800;
+}
+
+.btn-success{
+    padding:13px;
+    width: 100%;
+    font-size:16px;
+    font-weight: bold;
+    margin-bottom:14px;
+    margin-top:10px;
+}
+
+
+.btn-primary{
+    padding:13px;
+    width: 100%;
+    font-size:16px;
+    font-weight: bold;
+    margin-bottom:14px;
+    margin-top:10px;
+}
+
+
+.btn-secondary{
+    padding:13px;
+    width: 100%;
+    font-size:16px;
+    font-weight: bold;
+    margin-bottom:14px;
+}
+
+.btn-danger{
+    padding:13px;
+    width: 100%;
+    font-size:16px;
+    font-weight: bold;
+    margin-bottom:14px;
+}
+
+.form-control{
+    padding:16px;
+    margin-top:15px;
+}
+
+
+.chip {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 16px;
+    margin: 5px;
+    font-size: 12px;
+}
+
+.chip span {
+    cursor: pointer;
+    font-weight: bold;
+    color:white;
+}
