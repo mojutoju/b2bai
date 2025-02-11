@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painpoints and Descriptions with Chips</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .checkbox-group {
+      margin-bottom: 15px;
+    }
+    .chip {
+      display: inline-block;
+      background-color: #e0e0e0;
+      color: #333;
+      padding: 5px 10px;
+      margin: 5px;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+    .chip span {
+      margin-left: 10px;
+      color: red;
+      cursor: pointer;
+    }
+    .description {
+      margin-top: 10px;
+      border: 1px solid #ddd;
+      padding: 10px;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+    .description ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .description li {
+      padding: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <h3>Select Painpoints</h3>
+  <div id="painpoints-options" class="checkbox-group">
+    <label><input type="checkbox" value="Regulatory Compliance"> Regulatory Compliance</label><br>
+    <label><input type="checkbox" value="Data Management"> Data Management</label><br>
+    <label><input type="checkbox" value="Efficiency"> Efficiency</label><br>
+    <label><input type="checkbox" value="Scalability"> Scalability</label><br>
+    <label><input type="checkbox" value="Innovation"> Innovation</label><br>
+    <label><input type="checkbox" value="Customer Satisfaction"> Customer Satisfaction</label><br>
+    <label><input type="checkbox" value="Cost Management"> Cost Management</label><br>
+    <label><input type="checkbox" value="Security"> Security</label><br>
+    <label><input type="checkbox" value="Integration"> Integration</label>
+  </div>
+
+  <h3>Selected Painpoints</h3>
+  <div id="painpoints-chips"></div>
+
+  <h3>Painpoint Details Breakdown</h3>
+  <div id="details-container"></div>
+
+  <h3>Selected Descriptions</h3>
+  <div id="descriptions-chips"></div>
+
+  <script>
+// Painpoints data
+const painpointsData = {
+  "Regulatory Compliance": [
+    "Navigating complex regulatory requirements",
+    "Ensuring compliance with industry standards",
+    "Managing audits and inspections",
+    "Keeping up with changing regulations",
+  ],
+  "Data Management": [
+    "Handling large volumes of data efficiently",
+    "Ensuring data security and privacy",
+    "Integrating data from multiple sources",
+    "Managing data storage and retrieval",
+  ],
+  "Efficiency": [
+    "Reducing manual processes and increasing automation",
+    "Streamlining workflows and operations",
+    "Improving productivity and reducing downtime",
+    "Managing resources effectively",
+  ],
+  "Scalability": [
+    "Scaling technology infrastructure to support growth",
+    "Managing increased demand without compromising performance",
+    "Ensuring systems can handle peak loads",
+    "Expanding operations into new markets",
+  ],
+  "Innovation": [
+    "Developing new products and services",
+    "Staying ahead of competitors with cutting-edge technology",
+    "Encouraging a culture of innovation within the organization",
+  ],
+  "Customer Satisfaction": [
+    "Enhancing user experience",
+    "Meeting customer expectations",
+    "Managing customer feedback and complaints",
+    "Ensuring high levels of customer support",
+  ],
+  "Cost Management": [
+    "Controlling operational costs",
+    "Managing budget constraints",
+    "Reducing expenses without sacrificing quality",
+    "Optimizing resource allocation",
+  ],
+  "Security": [
+    "Protecting sensitive information from breaches",
+    "Ensuring cybersecurity measures are up to date",
+    "Managing access control and authentication",
+    "Responding to security incidents and threats",
+  ],
+  "Integration": [
+    "Integrating various software tools and platforms",
+    "Ensuring seamless data flow between systems",
+    "Managing compatibility issues",
+    "Reducing integration costs and complexity",
+  ],
+};
+
+// DOM Elements
+const checkboxes = document.querySelectorAll('#painpoints-options input[type="checkbox"]');
+const chipsContainer = document.getElementById('painpoints-chips');
+const detailsContainer = document.getElementById('details-container');
+const descriptionsChipsContainer = document.getElementById('descriptions-chips');
+
+// Function to update the selected painpoints
+function updatePainpoints() {
+  const selectedPainpoints = Array.from(checkboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+
+  renderChips(selectedPainpoints, chipsContainer);
+  renderDescriptions(selectedPainpoints);
+}
+
+// Function to render chips
+function renderChips(painpoints, container) {
+  container.innerHTML = ''; // Clear current chips
+  painpoints.forEach((painpoint) => {
+    const chip = document.createElement('div');
+    chip.className = 'chip';
+    chip.textContent = painpoint;
+
+    // Add close button to chip
+    const closeBtn = document.createElement('span');
+    closeBtn.textContent = 'x';
+    closeBtn.addEventListener('click', () => {
+      const checkbox = Array.from(checkboxes).find((cb) => cb.value === painpoint);
+      if (checkbox) checkbox.checked = false;
+      updatePainpoints();
+    });
+
+    chip.appendChild(closeBtn);
+    container.appendChild(chip);
+  });
+}
+
+// Function to render descriptions (with checkboxes and chips for details)
+function renderDescriptions(painpoints) {
+  detailsContainer.innerHTML = ''; // Clear current descriptions
+  descriptionsChipsContainer.innerHTML = ''; // Clear description chips
+
+  painpoints.forEach((painpoint) => {
+    const descriptionDiv = document.createElement('div');
+    descriptionDiv.className = 'description';
+
+    // Add painpoint name
+    descriptionDiv.innerHTML = `<strong>${painpoint}:</strong><br>`;
+
+    // Create checkboxes for the description items
+    const descriptionList = painpointsData[painpoint].map((desc) => {
+      return `
+        <label>
+          <input type="checkbox" value="${desc}" onclick="updateDescriptionChips('${desc}', this)"> ${desc}
+        </label><br>
+      `;
+    }).join('');
+
+    descriptionDiv.innerHTML += `<div class="checkbox-group">${descriptionList}</div>`;
+    detailsContainer.appendChild(descriptionDiv);
+  });
+}
+
+// Function to render chips for selected descriptions
+function updateDescriptionChips(description, checkbox) {
+  const selectedDescriptionChips = Array.from(descriptionsChipsContainer.children);
+  if (checkbox.checked) {
+    const chip = document.createElement('div');
+    chip.className = 'chip';
+    chip.textContent = description;
+
+    // Add close button to description chip
+    const closeBtn = document.createElement('span');
+    closeBtn.textContent = 'x';
+    closeBtn.addEventListener('click', () => {
+      checkbox.checked = false;
+      updatePainpoints();
+      updateDescriptionsChips();
+    });
+
+    chip.appendChild(closeBtn);
+    descriptionsChipsContainer.appendChild(chip);
+  } else {
+    updateDescriptionsChips();
+  }
+}
+
+// Function to update description chips if checkboxes are unchecked
+function updateDescriptionsChips() {
+  const allChips = Array.from(descriptionsChipsContainer.children);
+  allChips.forEach((chip) => {
+    const description = chip.textContent.slice(0, -1); // Remove the 'x' button text
+    const checkbox = Array.from(document.querySelectorAll('input[type="checkbox"]')).find(
+      (cb) => cb.value === description
+    );
+    if (checkbox && !checkbox.checked) {
+      chip.remove();
+    }
+  });
+}
+
+// Attach event listeners to checkboxes
+checkboxes.forEach((checkbox) => checkbox.addEventListener('change', updatePainpoints));
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICP Form Builder</title>
+
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/icpcreate.css">
+<link rel="stylesheet" href="../css/setupicp.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"/>
+<link rel="icon" href="../img/logo.png" type="image/png" />
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="../css/icp.css">
+</head>
+<body>
+
+
+    
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+      </div>
+      
+    <div class="wrapper">
+       
+ 
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <center>
+            <img src="../img/dashlogo.svg" class="img-fluid me-2 align-items-center p-2" width="140px" alt="Logo">
+        </center>
+
+            <div class="profile-section d-flex align-items-center p-2 bg-light">
+                
+                
+                
+                <!-- Avatar -->
+                <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg" alt="User Avatar" class="rounded-circle me-2 img-fluid">
+                <!-- User Details -->
+                <div class="user-details">
+                    <div class="fw-bold">Cyber Surf</div>
+                    <div class="text-muted">John Doe</div>
+                </div>
+                <!-- Dropdown Icon -->
+                <div class="ms-auto">
+                    <i class="fa fa-sort text-muted"></i>
+                </div>
+            </div>
+
+            <p class="smalltexts">MAIN MENU</p>
+            <a href="dashboard.html" class="nav-link" id="dashboard-link"> <i class="ph-fill ph-user"></i> Dashboard</a>
+            <a href="agents.html" class="nav-link" id="agents-link"><i class="fa fa-user"></i> Agents</a>
+            <a href="integrations.html" class="nav-link" id="integrations-link"><i class="fa fa-plug"></i> Integrations</a>
+
+            <p class="smalltexts">MANAGEMENT</p>
+            <a href="templates.html" class="nav-link" id="templates-link"><i class="fa fa-file-pdf-o"></i> Templates</a>
+            <a href="automations.html" class="nav-link" id="automations-link"><i class="fa fa-cubes"></i> Automations</a>
+
+
+            <p class="smalltexts">TOOLS</p>
+            <a href="knowledgebase.html" class="nav-link" id="automations-link"><i class="fa fa-book"></i> Knowledge Base</a>
+
+            <p class="smalltexts">ACCOUNT SETTINGS</p>
+            <a href="userprofile.html" class="nav-link" id="userprofile"><i class="fa fa-user-circle"></i> User Profile</a>
+            <a href="team-management.html" class="nav-link" id="team-management"><i class="fa fa-group"></i> Team Management</a>
+
+            <p class="smalltexts">BILLINGS</p>
+            <a href="subscriptions.html" class="nav-link" id="subscriptions"><i class="fa fa-tasks"></i> Subscriptions</a>
+            <a href="paymentmethod.html" class="nav-link" id="paymentmethod"><i class="fa fa-money"></i> Payment Methods</a>
+        </div>
+
+    
+
+    <div class="container my-4">
+
+         
+        <div class="smallbar ">
+
+            <div class="left">
+      <div class="dropdown">
+          <button
+            class="dropdown-toggle"
+            type="button"
+            id="dropdownMenuButton"
+            data-mdb-toggle="dropdown"
+            aria-expanded="false">
+          Dashboard
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+            <li><a class="dropdown-item" href="agents.html">Agents</a></li>
+            <li><a class="dropdown-item" href="integrations.html">Integrations</a></li>
+
+            <li><a class="dropdown-item" href="templates.html"> Templates </a></li>
+            <li><a class="dropdown-item" href="automations.html">Automations</a></li>
+            <li><a class="dropdown-item" href="knowledge.html">Knowledge</a></li>
+            <li><a class="dropdown-item" href="userprofile.html"> User Profile </a></li>
+
+            <li><a class="dropdown-item" href="templates.html"> Team Management </a></li>
+            <li><a class="dropdown-item" href="subscriptions.html"> Subscriptions</a></li>
+            <li><a class="dropdown-item" href="paymentmethods.html"> Payment Methods </a></li>
+
+
+
+          </ul>
+        </div>
+</div>
+
+<div class="right">
+<a href="#" class="link-color"> <i class="fa fa-search"></i> </a> 
+<a href="#" class="link-color"> <i class="fa fa-bell"></i> </a>
+<a href="#" class="link-color"> <i class="fa fa-share-alt"></i> </a>
+</div>
+
+
+      </div>
+
+<div class="containerd">
+    <h1 class="mb-4">Setup Your Product Characteristics</h1>
+
+    <form id="productForm">
+        <div class="mb-3">
+            <label for="productName" class="form-label">Product Name</label>
+            <input type="text" class="form-control" id="productName" placeholder="Enter Product Name">
+        </div>
+
+        <div class="mb-3">
+            <label for="organizationName" class="form-label">Organization Name</label>
+            <input type="text" class="form-control" id="organizationName" placeholder="Enter Organization Name">
+        </div>
+
+        <div class="mb-3">
+            <label for="websiteUrl" class="form-label">Website URL</label>
+            <input type="url" class="form-control" id="websiteUrl" placeholder="Enter Website URL">
+        </div>
+
+        <div class="mb-3">
+            <label for="overview" class="form-label">Overview</label>
+            <textarea class="form-control" id="overview" rows="3" placeholder="Provide an overview"></textarea>
+        </div>
+
+        <h3>Pain Points</h3>
+        <div class="mb-3">
+            <label for="painPoints" class="form-label">Select Pain Points</label>
+            <select id="painPoints" class="form-select select2" multiple></select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter Your Pain Points</label>
+            <div id="painPointsContainer"></div>
+            <button type="button" id="addPainPoint" class="btn btn-secondary">Add Pain Point</button>
+        </div>
+
+        <h3>Goals</h3>
+        <div class="mb-3">
+            <label for="goals" class="form-label">Select Goals</label>
+            <select id="goals" class="form-select select2" multiple></select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter Your Goals</label>
+            <div id="goalsContainer"></div>
+            <button type="button" id="addGoal" class="btn btn-secondary">Add Goal</button>
+        </div>
+
+        <h3>Value Propositions</h3>
+        <div class="mb-3">
+            <label for="valuePropositions" class="form-label">Select Value Propositions</label>
+            <select id="valuePropositions" class="form-select select2" multiple></select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Enter Your Value Propositions</label>
+            <div id="valuePropositionsContainer"></div>
+            <button type="button" id="addValueProposition" class="btn btn-secondary">Add Value Proposition</button>
+        </div>
+
+        <h3>Proof Points</h3>
+        <div class="mb-3">
+            <label class="form-label">Enter Proof Points</label>
+            <div id="proofPointsContainer"></div>
+            <button type="button" id="addProofPoint" class="btn btn-secondary">Add Proof Point</button>
+        </div>
+        <HR style="BORDER:1PX SOLID rgb(58, 58, 202);">
+        <button type="button" class="btn btn-success" id="saveProductForm">Save Form </button>
+        <HR style="BORDER:1PX SOLID rgb(58, 58, 202);">
+    </form>
+</div>
+
+<!-- Live Preview -->
+<div id="livePreview" class="live-preview">
+    <h3>Live Preview</h3>
+    <pre id="previewContent">{}</pre>
+</div>
+
+
+<!-- Toggle Preview Button -->
+<button id="togglePreview"><i class="fa fa-eye-slash"></i></button>
+
+
+<script src="../js/productcharacteristics.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script src="../js/dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+.step-content {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .btn-primary, .btn-secondary, .btn-success {
+    margin-top: 10px;
+  }
+  .step {
+    display: none;
+  }
+  .active-step {
+    display: block;
+  }
+  .chips-container {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .chip {
+    margin: 5px;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+  }
+  .close-btn {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  .chips-container .chip:hover {
+    background-color: #0056b3;
+  }
+  .is-invalid {
+    border-color: red;
+  }
+
+  .checkbox-container label {
+display: block;
+font-size: 14px;
+}
+
+.chips-container {
+margin-top: 10px;
+display: flex;
+flex-wrap: wrap;
+}
+
+.chip {
+background-color: #007bff;
+color: white;
+border-radius: 16px;
+padding: 5px 10px;
+margin: 5px;
+display: flex;
+align-items: center;
+}
+
+.chip .remove {
+margin-left: 10px;
+cursor: pointer;
+font-weight: bold;
+}
+
+.chip:hover {
+background-color: #0056b3;
+}
+#industrySelect {
+    width: 100% !important; /* Increase the width to fit container */
+}
+
+/* Optionally style the dropdown container itself */
+.select2-container {
+    width: 100% !important;
+}
+
+/* Style for the dropdown options */
+.select2-dropdown {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Adjust width when the dropdown is opened */
+.select2-results__options {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+/* Customize the 'Select All' button style */
+#select-all {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Hover effect for the 'Select All' button */
+#select-all:hover {
+    background-color: #0056b3;
+}
+/* Style for the Select2 container */
+#industrySelect {
+    width: 100% !important; /* Ensure the width takes up full space */
+}
+
+.select2-container {
+box-sizing: border-box;
+display: inline-block;
+margin: 0;
+position: relative;
+vertical-align: middle;
+}
+
+.select2-dropdown {
+background-color: white;
+border: 1px solid #aaa;
+border-radius: 4px;
+box-sizing: border-box;
+display: block;
+position: absolute;
+left: 0; /* Ensure it aligns directly under the field */
+width: 100%;
+z-index: 1051;
+}
+.select2-container--open .select2-dropdown {
+margin-top: 4px; /* Adjust this value to fine-tune the gap between input and dropdown */
+}
+
+.select2-results {
+display: block;
+}
+
+.select2-results__options {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+
+.select2-results__option {
+padding: 6px;
+user-select: none;
+-webkit-user-select: none;
+}
+
+.select2-container--default.select2-container--open .select2-selection--single .select2-selection__arrow b {
+border-color: transparent transparent #888 transparent;
+border-width: 0 4px 5px 4px;
+}
+
+.select2-container--open .select2-dropdown {
+top: 100%; /* This positions the dropdown directly under the field */
+margin-top: 2px; /* Optional: Adjust the gap between the field and the dropdown */
+}
+

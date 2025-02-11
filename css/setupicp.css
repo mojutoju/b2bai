@@ -1,0 +1,186 @@
+
+
+.step-form {
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+.step {
+    display: none;
+}
+
+.step.active {
+    display: block;
+}
+
+.containers {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+    font-size:12px;
+}
+
+.containers::-webkit-scrollbar {
+    width: 8px;
+}
+
+.containers::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.containers::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.chip {
+    background-color: #007bff;
+    color: white;
+    padding: 2px 12px; /* Reduced padding */
+    border-radius: 12px; /* Reduced border-radius */
+    font-size: 12px; /* Smaller font size */
+    line-height: 1.5;
+}
+
+.chip button {
+    background: none;
+    border: none;
+    color: white;
+    margin-left: 5px;
+    font-size: 10px; /* Adjusted font size for the button */
+    cursor: pointer;
+    padding: 0;
+}
+
+.chip button:hover {
+    color: #ccc;
+}
+
+.checkbox-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    padding: 10px 10px;
+    font-size: 13px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button.next {
+    background-color: #007bff;
+    color: white;
+}
+
+button.prev {
+    background-color: #6c757d;
+    color: white;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#sectorsContainer {
+height: 150px; /* Adjust to your desired height */
+overflow-y: auto; /* Enable vertical scrolling */
+border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+padding: 8px; /* Optional: Add some padding inside the container */
+box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+background-color: #f9f9f9; /* Optional: Set a background color */
+}
+
+
+.radio-container {
+    height: 100px; /* Adjust to your desired height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 8px; /* Optional: Add some padding inside the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+    background-color: #f9f9f9; /* Optional: Set a background color */
+    font-size: 12px;
+}
+
+
+#proof-points-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#substage-options label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+   
+}
+
+#description-options {
+    display: flex;
+    flex-direction: column;
+}
+
+#description-options label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+#substage-options input[type="checkbox"] {
+    margin-right: 10px; /* Space between radio button and label */
+    accent-color: #007bff; /* Optional: makes the radio button blue */
+}
+
+/* Style for the substage textarea */
+#substage-textarea {
+    display: none;
+    margin-top: 20px;
+}
+
+#substage-textarea textarea {
+    width: 100%;
+    height: 120px; /* Adjust as needed */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    resize: vertical; /* Allows resizing vertically */
+    outline: none;
+}
+
+#substage-textarea textarea:focus {
+    border-color: #007bff; /* Highlight border when focused */
+}
+
+.subcontain{
+    height: 80px; /* Adjust to your desired height */
+    overflow-y: auto; /* Enable vertical scrolling */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    padding: 8px; /* Optional: Add some padding inside the container */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a slight shadow */
+    background-color: #f9f9f9; /* Optional: Set a background color */
+    font-size: 12px;
+}
+
+select{
+    font-size:12px;
+}

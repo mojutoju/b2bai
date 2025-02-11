@@ -185,21 +185,31 @@ function displayStep(stepNum) {
                         <span id="${input.id}-error" class="text-danger"></span>
                     </p>`;
             } else if (input.type === "select") {
+                // Use a custom div for the dropdown
                 const options = input.options
-                    .map((opt) => `<option ${formData[input.id]?.includes(opt) ? "selected" : ""}>${opt}</option>`)
+                    .map((opt) => `
+                        <div class="custom-option">
+                            <label>
+                                <input type="checkbox" 
+                                       value="${opt}" 
+                                       ${formData[input.id]?.includes(opt) ? "checked" : ""}>
+                                ${opt}
+                            </label>
+                        </div>
+                    `)
                     .join("");
                 contentDiv.innerHTML += `
-                    <p>
-                        <select id="${input.id}" 
-                                class="form-select" 
-                                multiple 
-                                ${input.required ? "required" : ""}>
+                    <div class="dropdown">
+                        <button id="${input.id}-dropdown" class="btn btn-secondary dropdown-toggle" type="button">
+                            Select Options
+                        </button>
+                        <div id="${input.id}-dropdown-options" class="dropdown-menu">
                             ${options}
-                        </select>
-                        <span id="${input.id}-error" class="text-danger"></span>
+                        </div>
                         <div id="${input.id}-chips" class="chip-container mt-2"></div>
-                    </p>`;
+                    </div>`;
             }
+            
         });
     }
 

@@ -1,0 +1,41 @@
+.form-control{
+    font-size:12px;
+}
+
+label{
+    font-size:12px;
+}
+
+.small-size{
+    font-size:12px;
+}
+
+.icptitle{
+    background-color: #eeeaea8f;
+    padding:20px;
+}
+
+.chip {
+    display: inline-block;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+    background-color:royalblue  ;
+    font-size:11px;
+    color: white;
+  }
+  .chip span {
+    margin-right: 5px;
+ 
+  }
+  .chip button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    color:white;
+
+  }
+
+  .form-section { margin-bottom: 20px; }
+  .error { color: red; font-size: 0.9em; }

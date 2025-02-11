@@ -150,4 +150,3 @@ const toggleSwitch = document.getElementById('toggle-switch');
     }
   });
 
-

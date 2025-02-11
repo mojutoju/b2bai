@@ -1,369 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2BAI - Revolutionizing Enterprise with AI-Driven Insights.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>B2BAI - Revolutionizing Enterprise with AI-Driven Insights.</title>
   
-<!-- Font Awesome -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  <!-- Font Awesome -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+  />
+
+   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+  />
+  <!-- MDB -->
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css"
+    rel="stylesheet"
+  />
+  
+  
+      <!-- Google Fonts -->
+  <link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+  
+  
+      <!-- Custom CSS -->
+      <link rel="stylesheet" href="../css/setup.css">
+      <link rel="stylesheet" href="../css/icpsetup.css">     
+  
+  <link
   rel="stylesheet"
-/>
-<!-- Google Fonts -->
-<link
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-  rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/8.1.0/mdb.min.css"
-  rel="stylesheet"
-/>
-
-
-    <!-- Google Fonts -->
-<link href="https://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
-
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="../css/sdragents.css">
-            
-
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
-/>
-
-<link rel="icon" href="../img/logo.png" type="image/png" />
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+  />
+  
+  <link rel="icon" href="../img/logo.png" type="image/png" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 <body>
-  <!-- Modal Structure -->
-  <div class="modal fade" id="multiStepModal" tabindex="-1" aria-labelledby="multiStepModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="multiStepModalLabel">Step 1</h5>
-            </div>
-            <div class="modal-body">
-                <div id="stepContent"></div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" id="goBackButton" style="display: none;">Go Back</button>
-                <button type="button" class="btn btn-primary" id="nextButton">Next</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Overlay -->
-<div class="overlay" id="overlay"></div>
-    <div class="wrapper">
-
-
-<div class="container-fluid">
-
-
-<div class="row">
-
-
-    <div class="col-md-3 mb-3">
-<div class="card">
-    <center>
-        <img src="../img/dashlogo.svg" class="img-fluid me-2 align-items-center p-2" width="140px" alt="Logo">
-    </center>
-
-    <div class="profile-section d-flex align-items-center p-2 bg-light">
-                
-                
-                
-        <!-- Avatar -->
-        <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg" alt="User Avatar" class="rounded-circle me-2 img-fluid">
-        <!-- User Details -->
-        <div class="user-details">
-            <div class="fw-bold text-black">SDR Agents</div>
-            <div class="text-muted">Sales Development Activities</div>
-        </div>
-        <!-- Dropdown Icon -->
-        <div class="ms-auto">
-            <i class="fa fa-sort text-muted"></i>
-        </div>
-    </div>
 
 
 
-</div>
 
-<div style="margin-top:12px;">
-</div>
+  <center class="mt-5">
+    <a href="dashboard.html"> <img src="../img/dashlogo.svg" class="img-fluid" width="140px"> </a>
+ </center>
 
-
-<a href="dashboard.html" class=" pricing-button btn " style="text-transform: none;"> Go back to Dashboard  </a>
-
-
-
-<div style="margin-top:12px;">
-</div>
-
-<div class="custom-accordion">
-  <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'tasks')">
-    <h5 class="text-black6"> <i class="fa fa-briefcase"></i> Tasks </h5>
-    <i class="fas fa-arrow-right arrow-icon"></i>
-  </button>
-  <div class="custom-accordion-content" data-accordion="tasks">
-    <div class="tab-buttons">
-      <div class="tab-button active" onclick="Tabs.switch(this, 'tasks', 'all-tasks')">All Tasks</div>
-      <div class="tab-button" onclick="Tabs.switch(this, 'tasks', 'review-tasks')">Review</div>
-    </div>
-    <div id="all-tasks" class="tab-content active" data-parent="tasks">
-      <p>Today</p>
-      <h5 class="text-black6"> No Tasks</h5>
-      <hr>
-    </div>
-    <div id="review-tasks" class="tab-content" data-parent="tasks">
-      <p>Today</p>
-      <h5 class="text-black6"> No Review</h5>
-      <hr>
-    </div>
-  </div>
-  
-   <!-- Logs Section -->
-   <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'logs')">
-    <h5 class="text-black6"> <i class="fa fa-database"></i> Logs </h5>
-    <i class="fas fa-arrow-right arrow-icon"></i>
-  </button>
-  <div class="custom-accordion-content" data-accordion="logs">
-    <div class="tab-buttons">
-      <div class="tab-button active" onclick="Tabs.switch(this, 'logs', 'all-logs')"> <i class="fa fa-phone"> </i> Call Logs</div>
-      <div class="tab-button" onclick="Tabs.switch(this, 'logs', 'review-logs')"><i class="fa fa-envelope"> </i>  Email Logs</div>
-    </div>
-    <div id="all-logs" class="tab-content active" data-parent="logs">
-      <p>Today</p>
-      <h5 class="text-black6"> No Logs</h5>
-      <hr>
-    </div>
-    <div id="review-logs" class="tab-content" data-parent="logs">
-      <p>Today</p>
-      <h5 class="text-black6"> No Emails</h5>
-      <hr>
-    </div>
-  </div>
-
-   <!-- Analytics Section -->
-   <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'analytics')">
-    <h5 class="text-black6"> <i class="fa fa-chart-line"></i> Analytics </h5>
-    <i class="fas fa-arrow-right arrow-icon"></i>
-  </button>
-  <div class="custom-accordion-content" data-accordion="analytics">
-    <div class="tab-buttons">
-      <div class="tab-button active" onclick="Tabs.switch(this, 'analytics', 'dashboard-tab')"> <i class="fa fa-dashboard"> </i> Dashboard</div>
-      <div class="tab-button" onclick="Tabs.switch(this, 'analytics', 'records-tab')"> <i class="fa fa-archive"> </i> Records</div>
-    </div>
-    <div id="dashboard-tab" class="tab-content active" data-parent="analytics">
-      <p>Today</p>
-      <h5 class="text-black6"> No Dashboard Data</h5>
-      <hr>
-    </div>
-    <div id="records-tab" class="tab-content" data-parent="analytics">
-      <p>Today</p>
-      <h5 class="text-black6"> No Records Data</h5>
-      <hr>
-    </div>
-  </div>
-
-  <!-- Data Section -->
-  <button class="custom-accordion-button" onclick="Accordion.toggle(this, 'data')">
-    <h5 class="text-black6"> <i class="fa fa-database"></i> Data </h5>
-    <i class="fas fa-arrow-right arrow-icon"></i>
-  </button>
-  <div class="custom-accordion-content" data-accordion="data">
-    <div class="tab-buttons">
-      <div class="tab-button active" onclick="Tabs.switch(this, 'data', 'leads-tab')"> <i class="fa fa-user"> </i> Leads</div>
-      <div class="tab-button" onclick="Tabs.switch(this, 'data', 'prospects-tab')"> <i class="fa fa-users"> </i> Prospects</div>
-    </div>
-    <div id="leads-tab" class="tab-content active" data-parent="data">
-      <p>Today</p>
-      <h5 class="text-black6"> No Leads</h5>
-      <hr>
-    </div>
-    <div id="prospects-tab" class="tab-content" data-parent="data">
-      <p>Today</p>
-      <h5 class="text-black6"> No Prospects</h5>
-      <hr>
-    </div>
-
-
-    <div style="margin-top:12px;"> </div>
-   
-
-   
-</div>
-</div>
-</div>
     
-    <div class="col-md-6 mb-3">
+  <div class="d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+     
+    <div class="container ">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-3">
+                <center>
+                <img src="../img/3.svg" class="img-fluid "> </center>
 
 
-            <!-- Chatbox -->
-            <div class="card chatbox shadow-3">
-           
-              <div class="card-body overflow-auto" id="chat-body" style="height: 500px; overflow-y: scroll; scrollbar-width: none;">
-                <div class="d-flex flex-column gap-3" id="chat-content">
-
-                      <div class="message p-3 bg-light rounded">       <i class="fa fa-user-circle"></i> Hello! How can I help you?</div>
-
-
-                      <div class="message align-self-end p-3 bg-primary text-white rounded">      <i class="fa fa-user-circle"></i>  I need assistance with my account.</div>
-                   
-                      <div class="message p-3 bg-light rounded">
-                        <i class="fa fa-user-circle"></i> Hello! How can I help you?
-                    </div>
-
-                 
-                    </div>
-              </div>
-
-
-<!-- Messagebox -->
-<div class="messagebox mt-3">
-  <div id="file-preview" class="d-flex align-items-center gap-2 mb-2" style="display: none;">
-      <span id="file-name" class="text-truncate" style="max-width: 200px;"></span>
-      <button id="cancel-file" class="btn btn-sm btn-danger" style="display: none;"> 
-          <i class="fas fa-times"></i>
-      </button>
-  </div>
-  <div class="input-group">
-      <label for="file-upload" class="btn" style="box-shadow: none;">
-          <i class="fas fa-paperclip"></i>
-      </label>
-      <input type="file" id="file-upload" class="d-none">
-      <input type="text" class="form-control p-4" placeholder="Type a message..." id="message-input">
-      <button class="btn btn-primary" id="send-button">
-          <i class="fa fa-paper-plane"></i>
-      </button>
-  </div>
-</div>
-
-</div>
-
-
-
-      </div>
-
-      
-
-      <div class="col-md-3 toggle-container">
-        <div class="card">
-          <h4 class="properties-text">PROPERTIES</h4>
-      
-          <div style="margin-top:12px;"></div>
-          <div class="propertieswrap">
-            <div class="left">
-              <h4 class="text-black6">Status</h4>
             </div>
-      
-            <div class="right">
-              <label class="switch">
-                <input type="checkbox" id="toggle-switch" checked>
-                <span class="slider round"></span>
-              </label>
-            </div>
-          </div>
 
+  <div class="col-md-6 mb-3">
+   
+    <h4>Set Up Your Ideal Customer Profile</h4>
+    <hr>
+    <div id="steps" class="mt-4">
+      <!-- 0 Step 1: Requirements -->
+      <div class="step active-step" id="step1">
+        <div class="step-content">
+          <h3>Requirements</h3>
           <hr>
-
-          <div class="propertieswrap">
-            <div class="left">
-              <h4 class="text-black6"><i class="fa fa-calendar"></i> Date</h4>
-            </div>
-      
-            <div class="right">
-             
-              <h4 class="text-black6">01/12/2024</h4>
-            </div>
-          </div>
-
-
-
+          <p>Setup your first ICP. Ideal Customer Profile (ICP) helps in finding leads and prospects suitable for your business. It is mandatory to setup the ICP if you want to use the SDR Agent. You can edit the ICP later.</p>
+          <button class="btn btn-primary" onclick="validateAndProceed(1)">Next</button>
         </div>
-
-      
-        <div style="margin-top:12px;"></div>
-
-       <!-- Data Section -->
-<button class="custom-accordion-button" onclick="Accordion.toggle(this, 'integration')">
-  <h5 class="text-black6">Connected Apps</h5>
-  <i class="fas fa-arrow-right arrow-icon"></i>
-</button>
-
-<div class="custom-accordion-content" data-accordion="integration" style="height:500px; padding:20px;">
-  <div class="radio-group">
-    <!-- Chrome Option -->
-    <div class="radio-option">
-      <label for="chrome">
-        <img src="../img/chrome.png" class="img-fluid mb-2" width="30px" alt="Chrome Icon">
-       
-      </label>
-      <input type="radio" id="chrome" name="app" value="chrome">
-    </div>
-
-    <!-- Microsoft Teams Option -->
-    <div class="radio-option">
-      <label for="teams">
-        <img src="../img/teams.png" class="img-fluid mb-2" width="30px" alt="Teams Icon">
-      
-      </label>
-      <input type="radio" id="teams" name="app" value="teams">
-    </div>
-
-    
-
-    <!-- Outlook Option -->
-    <div class="radio-option">
-      <label for="outlook">
-        <img src="../img/outlook.png" class="img-fluid mb-2" width="30px" alt="Outlook Icon">
-      
-      </label>
-      <input type="radio" id="outlook" name="app" value="outlook">
-    </div>
-
-    <!-- Zapier Option -->
-    <div class="radio-option">
-      <label for="zapier">
-        <img src="../img/zapier.png" class="img-fluid mb-2" width="30px" alt="Zapier Icon">
-        
-      </label>
-      <input type="radio" id="zapier" name="app" value="zapier">
-    </div>
-
-    <!-- Gmail Option -->
-    <div class="radio-option">
-      <label for="gmail">
-        <img src="../img/gmail.png" class="img-fluid mb-2" width="30px" alt="Gmail Icon">
-      
-      </label>
-      <input type="radio" id="gmail" name="app" value="gmail">
-    </div>
-
-  </div>
-</div>
-
-    </div>
-  
-
-
       </div>
-</div>
 
-</div>
-<script src="../includes/modalpopup.js"></script>
-    <script src="../includes/test.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.3.0/mdb.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    </body>
-    </html>
+      <!-- 1 Step 2: Enter your ICP -->
+      <div class="step" id="step2">
+        <div class="step-content">
+          <h3>Enter your ICP</h3>
+          <p>Describe what you want to achieve through this ICP.</p>
+          <input type="text" id="icpInput" class="form-control" placeholder="Enter your goal" required>
+          <div>
+            <button class="btn btn-secondary" onclick="handleICP(0)">Go Back</button>
+            <button class="btn btn-primary" onclick="validateAndProceed(2)">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Step 3: Industry -->
+      <div class="step" id="step3">
+        <div class="step-content">
+          <h3>Industry</h3>
+          <p>What industry is your ICP in ?</p>
+         
+          <div class="mb-3">
+            <input
+              type="text"
+              id="industry-search"
+              class="form-control"
+              placeholder="Type to search industries..."
+              autocomplete="off"
+              data-bs-toggle="dropdown"
+              name="industrytype"
+            >
+            <ul class="dropdown-menu w-100" id="industry-dropdown-menu"></ul>
+          </div>
+          <div id="industry-chips" class="chips-container mb-4"></div>
+
+          <textarea id="productReason" class="form-control" placeholder="Reason" required></textarea>
+         
+          <div>
+            <button class="btn btn-secondary" onclick="handleICP(1)">Go Back</button>
+            <button class="btn btn-primary" onclick="validateAndProceed(3)">Next</button>
+          </div>
+        </div>
+      </div>
+
+      
+      <!-- 3 Step 5: Employee Head Count -->
+      <div class="step" id="step5">
+        <div class="step-content">
+          <h3>Employee Head Count</h3>
+          <p>Provide the employee details for the ideal companies.</p>
+          <select id="employeeCountSelect" class="form-control" multiple required onchange="updateChips()">
+            <option>1-50</option>
+            <option>51-100</option>
+            <option>101-500</option>
+            <option>More than 501</option>
+          </select>
+          <div id="chipsContainer" class="chips-container"></div>
+
+          <select id="departmentCountSelect" class="form-control mt-3" multiple required onchange="updateChips()">
+            <option>1-10</option>
+            <option>11-50</option>
+            <option>51-100</option>
+          </select>
+          <div id="departmentChipsContainer" class="chips-container"></div>
+
+          <div>
+            <button class="btn btn-secondary" onclick="handleICP(2)">Go Back</button>
+            <button class="btn btn-primary" onclick="validateAndProceed(5)">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5 Step 6: Geography -->
+      <div class="step" id="step6">
+        <div class="step-content">
+          <h3>Geography</h3>
+          <p>Select the countries and their cities:</p>
+          <!-- Multi-select for countries -->
+          <select id="countrySelect" class="form-control" multiple required onchange="updateCountryChips()">
+            <option value="United States">United States</option>
+            <option value="Canada">Canada</option>
+            <option value="Australia">Australia</option>
+            <option value="United Kingdom">United Kingdom</option>
+            <!-- Add more countries here -->
+          </select>
+
+          <!-- Dynamic multi-select for cities (hidden initially) -->
+          <select id="citySelect" class="form-control mt-3" multiple onchange="updateCityChips()"></select>
+
+          <div id="countryChipsContainer" class="chips-container"></div>
+          <div id="cityChipsContainer" class="chips-container"></div>
+
+          <div>
+            <button class="btn btn-secondary" onclick="handleICP(2)">Go Back</button>
+            <button class="btn btn-primary" onclick="validateAndProceed(6)">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6 Step 7: Key Challenges -->
+      <div class="step" id="step7">
+        <div class="step-content">
+          <h3>Key Challenges</h3>
+          <p>What are the main problems the ICP is trying to solve?</p>
+          <textarea id="challengesInput" class="form-control" placeholder="Describe challenges" required></textarea>
+          <select id="painPointsSelect" class="form-control mt-3" multiple onchange="updatePainPointsChips()">
+
+            <option>High Operational Costs</option>
+            <option>Low Productivity</option>
+            <option>Employee Turnover</option>
+            <option>Market Competition</option>
+          </select>
+          <div id="painPointsChipsContainer" class="chips-container"></div>
+          <div>
+            <button class="btn btn-secondary" onclick="handleICP(5)">Go Back</button>
+            <button class="btn btn-primary" onclick="validateAndProceed(7)">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Step 8: Review -->
+      <div class="step" id="step8">
+        <div class="step-content">
+          <h3>Review</h3>
+          <p>Here are your inputs:</p>
+          <div id="reviewContent"></div>
+          <div>
+            <button class="btn btn-secondary" onclick="handleICP(6)">Go Back</button>
+            <button class="btn btn-success" onclick="downloadJSON()">Download JSON</button>
+            <button class="btn btn-success" onclick="submitICP()">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="../js/test.js"></script>
+</body>
+</html>

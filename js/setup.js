@@ -34,7 +34,7 @@ const steps = [
             <button class='btn btn-secondary btn-sm' onclick='handleStep(11)'>Go Back</button>
         `
     },
-    { label: "Schedule Agent Services ", content: "Schedule your agent's email and call service. Your agent will work according to this schedule.<br><select id='timeZone' class='form-select'><option value=''>Select Timezone</option><option value='EST'>EST</option><option value='PST'>PST</option></select><br><input type='time' id='startTime' required class='form-control'><br><input type='time' id='endTime' required class='form-control'><br><div><input type='checkbox' id='dayMonday'> Monday <input type='checkbox' id='dayTuesday'> Tuesday <input type='checkbox' id='dayWednesday'> Wednesday <input type='checkbox' id='dayThursday'> Thursday <input type='checkbox' id='dayFriday'> Friday</div> <button class='btn btn-primary btn-sm' onclick='saveSchedule()'>Proceed</button><button class='btn btn-secondary btn-sm' onclick='handleStep(13)'>Go Back</button>" },
+    { label: "Schedule Agent Services ", content: "Schedule your agent's email and call service. Your agent will work according to this schedule.<br><select id='timeZone' class='form-select'><option value=''>Select Timezone</option><option value='EST'>EST</option><option value='PST'>PST</option></select><br><input type='time' id='startTime' required class='form-control'><br><input type='time' id='endTime' required class='form-control'><br><div><input type='checkbox' id='dayMonday'> Monday <input type='checkbox' id='dayTuesday'> Tuesday <input type='checkbox' id='dayWednesday'> Wednesday <input type='checkbox' id='dayThursday'> Thursday <input type='checkbox' id='dayFriday'> Friday <input type='checkbox' id='daySaturday'> Saturday <input type='checkbox' id='daySunday'> Sunday</div> <button class='btn btn-primary btn-sm' onclick='saveSchedule()'>Proceed</button><button class='btn btn-secondary btn-sm' onclick='handleStep(13)'>Go Back</button>" },
     { label: "Confirm Schedule ", content: "You have scheduled a workflow for your agent. Would you like to proceed? <br><button class='btn btn-success btn-sm' onclick='handleStep(16)'>Yes</button><button class='btn btn-danger btn-sm' onclick='handleStep(0)'>No</button>" },
     { label: "Save Changes", content: "Would you like to save these changes? You can change these options later. <br><button class='btn btn-success btn-sm' onclick='saveDataToFile()'>Save Changes</button><button class='btn btn-danger btn-sm' onclick='handleStep(14)'>Cancel</button>" }
 ];
@@ -182,7 +182,8 @@ function saveSchedule() {
     if (document.getElementById('dayWednesday').checked) daysChecked.push('Wednesday');
     if (document.getElementById('dayThursday').checked) daysChecked.push('Thursday');
     if (document.getElementById('dayFriday').checked) daysChecked.push('Friday');
-
+    if (document.getElementById('daySaturday').checked) daysChecked.push('Saturday');
+    if (document.getElementById('daySunday').checked) daysChecked.push('Sunday');
     // Validate the inputs
     if (!timeZone) {
         alert('Please select a timezone.');

@@ -1,0 +1,144 @@
+.largetext{
+    font-size:40px;
+    letter-spacing: -2px;
+    color:black;
+    font-weight: 800;
+    text-align: center;
+   
+}
+
+.chip {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.5rem;
+    font-size: 14px;
+    background-color: #f1f1f1;
+    border-radius: 16px;
+    cursor: pointer;
+}
+.chip.selected {
+    background-color: #007bff;
+    color: white;
+}
+
+
+.checkbox-container {
+    max-height: 108px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size:12px;
+}
+.selected-options {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    min-height: 50px;
+    margin-bottom: 20px;
+}
+
+
+h5{
+    color:black;
+}
+
+
+.checkbox-group{
+    max-height: 108px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size:12px; 
+}
+
+.checkbox-group label {
+    display: block; /* Each checkbox gets its own line */
+    margin: 5px 0; /* Add some space between checkboxes */
+}
+
+
+/* Review Section Container */
+#review-content {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: 'Roboto', sans-serif;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Section Title */
+#review-content h6 {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+}
+
+/* Section Content */
+#review-content p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    margin-left: 10px;
+}
+
+/* Highlight Empty Fields */
+#review-content p:empty::before {
+    content: "None provided";
+    font-style: italic;
+    color: #999;
+}
+
+/* Alert Styling (Optional) */
+#validationAlert {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+#review-content li {
+    margin-left: 15px;
+    list-style-type: disc;
+    color: #555;
+}
+
+
+/* Style for the chip container */
+.chip {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 16px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+}
+
+/* Style for the close button */
+.chip .close-btn {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 8px;
+    cursor: pointer;
+}
+
+/* Adjust close button positioning */
+.chip .close-btn:hover {
+    color: #ff4d4f;
+}

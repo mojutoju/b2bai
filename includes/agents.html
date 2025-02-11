@@ -1,0 +1,440 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2BAI - Revolutionizing Enterprise with AI-Driven Insights.</title>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <!-- MDB5 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.css" />
+    
+    <!-- Sidebar CSS -->
+    <link rel="icon" href="../img/logo.png" type="image/png" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/sidebar.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+</head>
+<body>
+
+    <div id="loader" class="loader-overlay">
+        <div class="spinner"></div>
+      </div>
+      
+    <div class="wrapper">
+       
+ 
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <center>
+            <img src="../img/dashlogo.svg" class="img-fluid me-2 align-items-center p-2" width="140px" alt="Logo">
+        </center>
+
+            <div class="profile-section d-flex align-items-center p-2 bg-light">
+                
+                
+                
+                <!-- Avatar -->
+                <img src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg" alt="User Avatar" class="rounded-circle me-2 img-fluid">
+                <!-- User Details -->
+                <div class="user-details">
+                    <div class="fw-bold">Cyber Surf</div>
+                    <div class="text-muted">John Doe</div>
+                </div>
+                <!-- Dropdown Icon -->
+                <div class="ms-auto">
+                    <i class="fa fa-sort text-muted"></i>
+                </div>
+            </div>
+
+            <p class="smalltexts">MAIN MENU</p>
+            <a href="dashboard.html" class="nav-link" id="dashboard-link"> <i class="ph-fill ph-user"></i> Dashboard</a>
+            <a href="agents.html" class="nav-link" id="agents-link"><i class="fa fa-user"></i> Agents</a>
+            <a href="integrations.html" class="nav-link" id="integrations-link"><i class="fa fa-plug"></i> Integrations</a>
+
+            <p class="smalltexts">MANAGEMENT</p>
+            <a href="templates.html" class="nav-link" id="templates-link"><i class="fa fa-file-pdf-o"></i> Templates</a>
+            <a href="automations.html" class="nav-link" id="automations-link"><i class="fa fa-cubes"></i> Automations</a>
+
+
+            <p class="smalltexts">TOOLS</p>
+            <a href="knowledgebase.html" class="nav-link" id="automations-link"><i class="fa fa-book"></i> Knowledge </a>
+
+            <p class="smalltexts">ACCOUNT SETTINGS</p>
+            <a href="userprofile.html" class="nav-link" id="userprofile"><i class="fa fa-user-circle"></i> User Profile</a>
+            <a href="team-management.html" class="nav-link" id="team-management"><i class="fa fa-group"></i> Team Management</a>
+
+            <p class="smalltexts">BILLINGS</p>
+            <a href="subscriptions.html" class="nav-link" id="subscriptions"><i class="fa fa-tasks"></i> Subscriptions</a>
+            <a href="paymentmethod.html" class="nav-link" id="paymentmethod"><i class="fa fa-money"></i> Payment Methods</a>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="main-content">
+            <div class="container-fluid">
+            <div class="smallbar ">
+
+                  <div class="left">
+            <div class="dropdown">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-mdb-toggle="dropdown"
+                  aria-expanded="false">
+                Dashboard
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <li><a class="dropdown-item" href="dashboard.html">Dashboard</a></li>
+                  <li><a class="dropdown-item" href="agents.html">Agents</a></li>
+                  <li><a class="dropdown-item" href="integrations.html">Integrations</a></li>
+
+                  <li><a class="dropdown-item" href="templates.html"> Templates </a></li>
+                  <li><a class="dropdown-item" href="automations.html">Automations</a></li>
+                  <li><a class="dropdown-item" href="knowledgebase.html">KnowledgeBase</a></li>
+                  <li><a class="dropdown-item" href="userprofile.html"> User Profile </a></li>
+
+                  <li><a class="dropdown-item" href="templates.html"> Team Management </a></li>
+                  <li><a class="dropdown-item" href="subscriptions.html"> Subscriptions</a></li>
+                  <li><a class="dropdown-item" href="paymentmethods.html"> Payment Methods </a></li>
+
+                <script src="test.js"></script>
+
+
+                </ul>
+              </div>
+</div>
+
+<div class="right">
+   <a href="#" class="link-color"> <i class="fa fa-search"></i> </a> 
+   <a href="#" class="link-color"> <i class="fa fa-bell"></i> </a>
+   <a href="#" class="link-color"> <i class="fa fa-share-alt"></i> </a>
+</div>
+
+
+            </div>
+
+            <div class="spacing-extra" style="margin-top:30px;"></div>
+            <h4>Manage your SDR Data</h4>
+            <HR>
+            <div class="table-responsive card">
+                <table class="table table-bordered table-striped   table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                         
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Time Zone</th>
+                            <th>Active Days</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dummy Data -->
+                        <tr>
+                        
+                            <td>John Doe</td>
+                            <td>johndoe@example.com</td>
+                            <td>+123456789</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                            
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                       
+                            <td>Jane Smith</td>
+                            <td>janesmith@example.com</td>
+                            <td>+987654321</td>
+                            <td>PST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+
+                        
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                    
+                            <td>Michael Johnson</td>
+                            <td>michaelj@example.com</td>
+                            <td>+1122334455</td>
+                            <td>EST</td>
+                            <td>
+                                <span class="badge badge-primary"> Monday</span>
+                                <span class="badge badge-primary"> Wendesday</span>
+                                <span class="badge badge-primary">Friday</span>
+                            </td>
+                            <td>
+                                <a href="editagents.html" class="btn btn-primary btn-sm">Edit</a>
+                                <a href="viewagent.html" class="btn btn-success btn-sm">View</a>
+                                <a href="deleteagent.html" class="btn btn-danger btn-sm">Delete</a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+             
+            </div>
+        
+            
+            <nav aria-label="...">
+              <ul class="pagination pagination-circle d-flex justify-content-center align-items-center">
+                <li class="page-item">
+                  <a class="page-link">Previous</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item active" aria-current="page">
+                  <a class="page-link" href="#">2 <span class="visually-hidden">(current)</span></a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#">Next</a>
+                </li>
+              </ul>
+            </nav>
+
+            </div>
+            </div>
+            </div>
+
+            
+    <!-- MDB -->
+    <script
+    type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.0/mdb.min.js"
+  ></script>
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>
